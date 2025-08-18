@@ -172,25 +172,25 @@ export default function BlogPage() {
   const regularPosts = filteredPosts.filter(post => !post.featured);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-surface-token">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#2E5A87] to-[#1e3a5f] text-white py-20">
+      <section className="gradient-hero text-inverse-token py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Retail Intelligence
-              <span className="block text-[#A8D5F2]">Insights & Trends</span>
+              <span className="block text-inverse-token/80">Insights & Trends</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-inverse-token/80 mb-8 leading-relaxed">
               Stay ahead of the curve with expert insights on AI-powered retail strategies, 
               customer experience optimization, and the future of commerce.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#2E5A87] hover:bg-gray-100 px-8 py-3">
+              <Button size="lg" className="bg-white px-8 py-3" style={{ color: 'rgb(var(--brand-primary))' }}>
                 <BookOpen className="mr-2 h-5 w-5" />
                 Explore Articles
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#2E5A87] px-8 py-3">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white px-8 py-3" style={{ color: 'rgb(var(--text-inverse))' }}>
                 <Mail className="mr-2 h-5 w-5" />
                 Subscribe to Newsletter
               </Button>
@@ -231,9 +231,10 @@ export default function BlogPage() {
                       onClick={() => setSelectedCategory(category.name)}
                       className={`flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all ${
                         selectedCategory === category.name
-                          ? 'bg-[#2E5A87] text-white shadow-lg'
-                          : 'bg-white text-gray-600 hover:bg-gray-100 border'
+                          ? 'shadow-lg'
+                          : 'bg-elevate-token text-muted-token hover:bg-surface-token border'
                       }`}
+                      style={selectedCategory === category.name ? { backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' } : {}}
                     >
                       <IconComponent className="mr-2 h-4 w-4" />
                       {category.name}
@@ -249,13 +250,13 @@ export default function BlogPage() {
             {/* Featured Posts */}
             {selectedCategory === 'All' && (
               <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured Articles</h2>
+                <h2 className="text-3xl font-bold text-base-token mb-8">Featured Articles</h2>
                 <div className="grid md:grid-cols-2 gap-8">
                   {featuredPosts.map((post) => (
-                    <Card key={post.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <Card key={post.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden bg-elevate-token">
                       <div className="relative">
-                        <div className="h-48 bg-gradient-to-br from-[#A8D5F2] to-[#2E5A87] rounded-t-lg"></div>
-                        <Badge className="absolute top-4 left-4 bg-yellow-500 text-black">
+                        <div className="h-48 gradient-hero rounded-t-lg opacity-80"></div>
+                        <Badge className="absolute top-4 left-4" style={{ backgroundColor: '#FCD34D', color: '#000' }}>
                           Featured
                         </Badge>
                       </div>
@@ -271,20 +272,21 @@ export default function BlogPage() {
                             {post.readTime}
                           </div>
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#2E5A87] transition-colors line-clamp-2">
+                        <h3 className="text-xl font-bold text-base-token mb-3 transition-colors line-clamp-2" style={{}}
+                        >
                           {post.title}
                         </h3>
-                        <p className="text-gray-600 mb-4 line-clamp-3">
+                        <p className="text-muted-token mb-4 line-clamp-3">
                           {post.excerpt}
                         </p>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
-                            <div className="w-8 h-8 bg-[#2E5A87] rounded-full flex items-center justify-center text-white text-sm font-semibold mr-3">
+                            <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold mr-3" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}>
                               {post.author.split(' ').map(n => n[0]).join('')}
                             </div>
                             <div>
-                              <p className="text-sm font-medium text-gray-900">{post.author}</p>
-                              <div className="flex items-center text-xs text-gray-500">
+                              <p className="text-sm font-medium text-base-token">{post.author}</p>
+                              <div className="flex items-center text-xs text-muted-token">
                                 <Eye className="mr-1 h-3 w-3" />
                                 {post.views.toLocaleString()}
                                 <MessageSquare className="ml-2 mr-1 h-3 w-3" />
@@ -292,7 +294,7 @@ export default function BlogPage() {
                               </div>
                             </div>
                           </div>
-                          <Button variant="ghost" size="sm" className="text-[#2E5A87] hover:bg-blue-50">
+                          <Button variant="ghost" size="sm" className="hover:bg-surface-token" style={{ color: 'rgb(var(--brand-primary))' }}>
                             Read More
                             <ArrowRight className="ml-1 h-4 w-4" />
                           </Button>
@@ -307,20 +309,20 @@ export default function BlogPage() {
             {/* Regular Posts Grid */}
             <div className="mb-12">
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-3xl font-bold text-gray-900">
+                <h2 className="text-3xl font-bold text-base-token">
                   {selectedCategory === 'All' ? 'Latest Articles' : `${selectedCategory} Articles`}
                 </h2>
-                <p className="text-gray-500">
+                <p className="text-muted-token">
                   {filteredPosts.length} articles found
                 </p>
               </div>
               
               <div className="grid gap-8">
                 {regularPosts.map((post) => (
-                  <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  <Card key={post.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden bg-elevate-token">
                     <div className="md:flex">
                       <div className="md:w-1/3">
-                        <div className="h-48 md:h-full bg-gradient-to-br from-[#A8D5F2] to-[#2E5A87] rounded-t-lg md:rounded-l-lg md:rounded-t-none"></div>
+                        <div className="h-48 md:h-full gradient-hero rounded-t-lg md:rounded-l-lg md:rounded-t-none opacity-80"></div>
                       </div>
                       <CardContent className="md:w-2/3 p-6">
                         <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
@@ -334,20 +336,20 @@ export default function BlogPage() {
                             {post.readTime}
                           </div>
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#2E5A87] transition-colors">
+                        <h3 className="text-xl font-bold text-base-token mb-3 transition-colors">
                           {post.title}
                         </h3>
-                        <p className="text-gray-600 mb-4 line-clamp-2">
+                        <p className="text-muted-token mb-4 line-clamp-2">
                           {post.excerpt}
                         </p>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
-                            <div className="w-8 h-8 bg-[#2E5A87] rounded-full flex items-center justify-center text-white text-sm font-semibold mr-3">
+                            <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold mr-3" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}>
                               {post.author.split(' ').map(n => n[0]).join('')}
                             </div>
                             <div>
-                              <p className="text-sm font-medium text-gray-900">{post.author}</p>
-                              <div className="flex items-center text-xs text-gray-500">
+                              <p className="text-sm font-medium text-base-token">{post.author}</p>
+                              <div className="flex items-center text-xs text-muted-token">
                                 <Eye className="mr-1 h-3 w-3" />
                                 {post.views.toLocaleString()}
                                 <MessageSquare className="ml-2 mr-1 h-3 w-3" />
@@ -356,10 +358,10 @@ export default function BlogPage() {
                             </div>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Button variant="ghost" size="sm" className="text-gray-400 hover:text-[#2E5A87]">
+                            <Button variant="ghost" size="sm" className="text-gray-400" style={{}}>
                               <Share2 className="h-4 w-4" />
                             </Button>
-                            <Button variant="ghost" size="sm" className="text-[#2E5A87] hover:bg-blue-50">
+                            <Button variant="ghost" size="sm" className="hover:bg-surface-token" style={{ color: 'rgb(var(--brand-primary))' }}>
                               Read More
                               <ArrowRight className="ml-1 h-4 w-4" />
                             </Button>
@@ -385,27 +387,27 @@ export default function BlogPage() {
           <div className="lg:w-1/3">
             <div className="sticky top-6 space-y-8">
               {/* Newsletter Signup */}
-              <Card className="bg-gradient-to-br from-[#2E5A87] to-[#1e3a5f] text-white">
+              <Card className="gradient-hero text-inverse-token">
                 <CardHeader>
-                  <CardTitle className="flex items-center text-white">
+                  <CardTitle className="flex items-center">
                     <Mail className="mr-2 h-5 w-5" />
                     Stay Updated
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-blue-100 mb-4">
+                  <p className="text-inverse-token/80 mb-4">
                     Get the latest retail AI insights delivered to your inbox weekly.
                   </p>
                   <div className="space-y-3">
                     <Input
                       placeholder="Your email address"
-                      className="bg-white/10 border-white/20 text-white placeholder:text-blue-200"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-inverse-token/70"
                     />
-                    <Button className="w-full bg-white text-[#2E5A87] hover:bg-gray-100">
+                    <Button className="w-full bg-white" style={{ color: 'rgb(var(--brand-primary))' }}>
                       Subscribe Now
                     </Button>
                   </div>
-                  <p className="text-xs text-blue-200 mt-3">
+                  <p className="text-xs text-inverse-token/70 mt-3">
                     Join 5,000+ retail professionals getting weekly insights.
                   </p>
                 </CardContent>
@@ -415,21 +417,21 @@ export default function BlogPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <TrendingUp className="mr-2 h-5 w-5 text-[#2E5A87]" />
+                    <TrendingUp className="mr-2 h-5 w-5" style={{ color: 'rgb(var(--brand-primary))' }} />
                     Popular Articles
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {popularPosts.map((post, index) => (
                     <div key={index} className="flex items-start space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                      <div className="w-6 h-6 bg-[#2E5A87] rounded-full flex items-center justify-center text-white text-xs font-bold">
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}>
                         {index + 1}
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-sm font-medium text-gray-900 line-clamp-2 mb-1">
+                        <h4 className="text-sm font-medium text-base-token line-clamp-2 mb-1">
                           {post.title}
                         </h4>
-                        <div className="flex items-center text-xs text-gray-500">
+                        <div className="flex items-center text-xs text-muted-token">
                           <Eye className="mr-1 h-3 w-3" />
                           {post.views.toLocaleString()} views
                         </div>
@@ -443,7 +445,7 @@ export default function BlogPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Tag className="mr-2 h-5 w-5 text-[#2E5A87]" />
+                    <Tag className="mr-2 h-5 w-5" style={{ color: 'rgb(var(--brand-primary))' }} />
                     Browse by Topic
                   </CardTitle>
                 </CardHeader>
@@ -457,7 +459,7 @@ export default function BlogPage() {
                         className="w-full flex items-center justify-between p-3 text-left hover:bg-gray-50 rounded-lg transition-colors"
                       >
                         <div className="flex items-center">
-                          <IconComponent className="mr-3 h-4 w-4 text-[#2E5A87]" />
+                          <IconComponent className="mr-3 h-4 w-4" style={{ color: 'rgb(var(--brand-primary))' }} />
                           <span className="text-sm font-medium">{category.name}</span>
                         </div>
                         <Badge variant="secondary" className="text-xs">
@@ -470,18 +472,18 @@ export default function BlogPage() {
               </Card>
 
               {/* Call to Action */}
-              <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-green-200">
+              <Card className="" style={{ background: 'linear-gradient(135deg, rgba(76,175,80,0.08), rgba(46,90,135,0.08))', borderColor: 'rgba(76,175,80,0.2)' }}>
                 <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-[#4CAF50] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Lightbulb className="h-6 w-6 text-white" />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgb(var(--brand-accent))' }}>
+                    <Lightbulb className="h-6 w-6" style={{ color: 'rgb(var(--text-inverse))' }} />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     Ready to Transform Your Retail Strategy?
                   </h3>
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-sm text-muted-token mb-4">
                     Discover how UnAbandon AI can help you reduce cart abandonment and increase conversions.
                   </p>
-                  <Button className="w-full bg-[#4CAF50] hover:bg-green-600">
+                  <Button className="w-full" style={{ backgroundColor: 'rgb(var(--brand-accent))', color: 'rgb(var(--text-inverse))' }}>
                     Get Started Free
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>

@@ -15,28 +15,28 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
 
   return (
     <Card 
-      className="group relative overflow-hidden border-0 bg-white/70 backdrop-blur-sm p-6 transition-all duration-500 hover:bg-white/90 hover:shadow-2xl hover:-translate-y-2"
+      className="group relative overflow-hidden border-0 bg-elevate-token backdrop-blur-sm p-6 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 rounded-brand shadow-soft-token"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  <div className="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
       <div className="relative z-10">
-        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#2E5A87] to-[#4CAF50] text-white mb-4 transition-transform duration-500 ${
+  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl text-inverse-token mb-4 transition-transform duration-500 ${
           isHovered ? 'scale-110 rotate-6' : ''
-        }`}>
+  }`} style={{ background: 'linear-gradient(135deg, rgb(var(--brand-primary)), rgb(var(--brand-accent)))' }}>
           {icon}
         </div>
         
-        <h3 className="text-xl font-semibold text-[#333333] mb-3 group-hover:text-[#2E5A87] transition-colors duration-300">
+  <h3 className="text-xl font-semibold text-base-token mb-3 group-hover:text-[rgb(var(--brand-primary))] transition-colors duration-300">
           {title}
         </h3>
         
-        <p className="text-[#666666] leading-relaxed group-hover:text-[#333333] transition-colors duration-300">
+  <p className="text-muted-token leading-relaxed group-hover:text-base-token transition-colors duration-300">
           {description}
         </p>
         
-        <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-[#2E5A87] to-[#4CAF50] group-hover:w-full transition-all duration-500" />
+  <div className="absolute bottom-0 left-0 w-0 h-1" style={{ background: 'linear-gradient(90deg, rgb(var(--brand-primary)), rgb(var(--brand-accent)))' }} />
       </div>
     </Card>
   );
@@ -120,14 +120,14 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, label, format 
       className="text-center group"
     >
       <div className="relative">
-        <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#2E5A87] to-[#4CAF50] bg-clip-text text-transparent mb-2 transition-transform duration-300 group-hover:scale-110">
+        <div className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent mb-2 transition-transform duration-300 group-hover:scale-110 gradient-brand">
           {displayValue}
         </div>
-        <div className="absolute inset-0 text-4xl md:text-5xl font-bold text-blue-200/30 blur-sm -z-10 group-hover:text-blue-300/50 transition-colors duration-300">
+        <div className="absolute inset-0 text-4xl md:text-5xl font-bold text-inverse-token/20 blur-sm -z-10 group-hover:text-inverse-token/40 transition-colors duration-300">
           {displayValue}
         </div>
       </div>
-      <p className="text-[#666666] font-medium group-hover:text-[#2E5A87] transition-colors duration-300">
+      <p className="text-muted-token font-medium group-hover:text-[rgb(var(--brand-primary))] transition-colors duration-300">
         {label}
       </p>
     </div>
@@ -176,7 +176,7 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/20 overflow-hidden">
+    <section className="relative py-20 bg-surface-token overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse" />
@@ -187,13 +187,13 @@ export const FeaturesSection = () => {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#333333] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-base-token mb-6">
             Powerful Features for{" "}
-            <span className="bg-gradient-to-r from-[#2E5A87] to-[#4CAF50] bg-clip-text text-transparent">
+            <span className="gradient-brand bg-clip-text text-transparent">
               Smart Retail
             </span>
           </h2>
-          <p className="text-xl text-[#666666] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-token max-w-3xl mx-auto leading-relaxed">
             Transform your retail operations with AI-powered insights and intelligent automation
             that drives growth and enhances customer experience.
           </p>
@@ -206,7 +206,7 @@ export const FeaturesSection = () => {
               {statistics.map((stat, index) => (
                 <div
                   key={index}
-                  className="relative p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20 hover:bg-white/80 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                  className="relative p-6 rounded-brand bg-elevate-token backdrop-blur-sm border border-white/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shadow-soft-token"
                 >
                   <AnimatedCounter
                     value={stat.value}
@@ -238,7 +238,7 @@ export const FeaturesSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-[#2E5A87] to-[#4CAF50] rounded-full text-white font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 cursor-pointer">
+          <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full text-inverse-token font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 cursor-pointer gradient-brand">
             <span>Ready to transform your retail business?</span>
             <TrendingUp className="w-5 h-5" />
           </div>

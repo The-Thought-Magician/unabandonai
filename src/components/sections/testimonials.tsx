@@ -23,67 +23,73 @@ const testimonials: Testimonial[] = [
     name: "Sarah Chen",
     role: "Head of Operations",
     company: "StyleVogue",
-    content: "UnAbandon AI transformed our inventory management completely. We've reduced overstock by 35% and improved our fashion trend predictions significantly.",
+    content:
+      "UnAbandon AI transformed our inventory management completely. We've reduced overstock by 35% and improved our fashion trend predictions significantly.",
     rating: 5,
-    logo: <ShoppingBag className="w-8 h-8 text-purple-600" />,
+    logo: <ShoppingBag className="w-8 h-8" style={{ color: "rgb(var(--brand-primary))" }} />,
     industry: "Fashion Retailer",
-    metric: "35% reduction in overstock"
+    metric: "35% reduction in overstock",
   },
   {
     id: 2,
     name: "Michael Rodriguez",
     role: "VP of Analytics",
     company: "TechHub Electronics",
-    content: "The customer insights platform helped us increase conversion by 40%. Understanding our buyers' behavior has revolutionized our sales strategy.",
+    content:
+      "The customer insights platform helped us increase conversion by 40%. Understanding our buyers' behavior has revolutionized our sales strategy.",
     rating: 5,
-    logo: <Smartphone className="w-8 h-8 text-blue-600" />,
+    logo: <Smartphone className="w-8 h-8" style={{ color: "rgb(var(--brand-primary))" }} />,
     industry: "Electronics Brand",
-    metric: "40% conversion increase"
+    metric: "40% conversion increase",
   },
   {
     id: 3,
     name: "Emily Watson",
     role: "Supply Chain Director",
     company: "FreshMart",
-    content: "Real-time analytics improved our supply chain efficiency dramatically. We can now predict demand patterns and optimize our inventory across 200+ stores.",
+    content:
+      "Real-time analytics improved our supply chain efficiency dramatically. We can now predict demand patterns and optimize our inventory across 200+ stores.",
     rating: 5,
-    logo: <Store className="w-8 h-8 text-green-600" />,
+    logo: <Store className="w-8 h-8" style={{ color: "rgb(var(--brand-primary))" }} />,
     industry: "Grocery Chain",
-    metric: "Enhanced supply chain efficiency"
+    metric: "Enhanced supply chain efficiency",
   },
   {
     id: 4,
     name: "David Kim",
     role: "E-commerce Manager",
     company: "MegaMart Department Store",
-    content: "AI recommendations boosted our average order value by 28%. The personalization engine understands our customers better than we ever could manually.",
+    content:
+      "AI recommendations boosted our average order value by 28%. The personalization engine understands our customers better than we ever could manually.",
     rating: 5,
-    logo: <Building2 className="w-8 h-8 text-orange-600" />,
+    logo: <Building2 className="w-8 h-8" style={{ color: "rgb(var(--brand-primary))" }} />,
     industry: "Department Store",
-    metric: "28% AOV increase"
+    metric: "28% AOV increase",
   },
   {
     id: 5,
     name: "Lisa Thompson",
     role: "Data Science Lead",
     company: "MarketPlace Pro",
-    content: "Predictive analytics reduced our stockouts by 60%. The platform's machine learning capabilities have transformed how we manage inventory across thousands of SKUs.",
+    content:
+      "Predictive analytics reduced our stockouts by 60%. The platform's machine learning capabilities have transformed how we manage inventory across thousands of SKUs.",
     rating: 5,
-    logo: <Globe className="w-8 h-8 text-indigo-600" />,
+    logo: <Globe className="w-8 h-8" style={{ color: "rgb(var(--brand-primary))" }} />,
     industry: "Online Marketplace",
-    metric: "60% stockout reduction"
+    metric: "60% stockout reduction",
   },
   {
     id: 6,
     name: "Amanda Foster",
     role: "Marketing Director",
     company: "GlowBeauty",
-    content: "Customer segmentation improved our marketing ROI by 45%. We can now target our campaigns with precision and see immediate results in engagement and sales.",
+    content:
+      "Customer segmentation improved our marketing ROI by 45%. We can now target our campaigns with precision and see immediate results in engagement and sales.",
     rating: 5,
-    logo: <Sparkles className="w-8 h-8 text-pink-600" />,
+    logo: <Sparkles className="w-8 h-8" style={{ color: "rgb(var(--brand-primary))" }} />,
     industry: "Beauty Brand",
-    metric: "45% marketing ROI boost"
-  }
+    metric: "45% marketing ROI boost",
+  },
 ];
 
 const StarRating = ({ rating }: { rating: number }) => {
@@ -92,9 +98,12 @@ const StarRating = ({ rating }: { rating: number }) => {
       {[...Array(5)].map((_, i) => (
         <Star
           key={i}
-          className={`w-4 h-4 ${
-            i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
-          }`}
+          className="w-4 h-4"
+          style={
+            i < rating
+              ? { color: "rgb(var(--brand-accent))", fill: "rgb(var(--brand-accent))" }
+              : { color: "rgb(203 213 225)" }
+          }
         />
       ))}
     </div>
@@ -103,28 +112,28 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 const TestimonialCard = ({ testimonial, isActive }: { testimonial: Testimonial; isActive: boolean }) => {
   return (
-    <Card 
+    <Card
       className={`relative p-8 h-full transition-all duration-700 transform ${
-        isActive 
-          ? "scale-105 shadow-2xl bg-gradient-to-br from-white via-white to-blue-50/30" 
-          : "scale-100 shadow-lg bg-white/80"
+        isActive ? "scale-105 shadow-strong-token bg-elevate-token" : "scale-100 shadow-soft-token bg-elevate-token"
       } backdrop-blur-sm border border-white/20 hover:shadow-xl group overflow-hidden`}
     >
       {/* Glassmorphism background effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-white/90 backdrop-blur-xl" />
-      
+      <div className="absolute inset-0 bg-white/80 backdrop-blur-xl" />
+
       {/* Animated gradient border */}
-      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
+      <div className="absolute inset-0 rounded-lg gradient-brand opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+
       <div className="relative z-10">
         {/* Company Logo and Info */}
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow duration-300">
+          <div className="w-16 h-16 rounded-xl bg-surface-token flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow duration-300">
             {testimonial.logo}
           </div>
           <div>
-            <h4 className="font-bold text-lg text-gray-900">{testimonial.company}</h4>
-            <p className="text-sm text-blue-600 font-medium">{testimonial.industry}</p>
+            <h4 className="font-bold text-lg text-base-token">{testimonial.company}</h4>
+            <p className="text-sm font-medium" style={{ color: "rgb(var(--brand-primary))" }}>
+              {testimonial.industry}
+            </p>
           </div>
         </div>
 
@@ -134,20 +143,26 @@ const TestimonialCard = ({ testimonial, isActive }: { testimonial: Testimonial; 
         </div>
 
         {/* Testimonial Content */}
-        <blockquote className="text-gray-700 mb-6 leading-relaxed font-medium">
-          "{testimonial.content}"
-        </blockquote>
+        <blockquote className="text-base-token mb-6 leading-relaxed font-medium">"{testimonial.content}"</blockquote>
 
         {/* Metric Highlight */}
-        <div className="mb-6 p-4 rounded-lg bg-gradient-to-r from-green-50 to-blue-50 border border-green-100">
-          <p className="text-sm text-green-700 font-semibold">{testimonial.metric}</p>
+        <div
+          className="mb-6 p-4 rounded-lg"
+          style={{
+            background: "linear-gradient(90deg, rgba(76,175,80,0.08), rgba(46,90,135,0.08))",
+            border: "1px solid rgba(76,175,80,0.2)",
+          }}
+        >
+          <p className="text-sm font-semibold" style={{ color: "rgb(var(--brand-accent))" }}>
+            {testimonial.metric}
+          </p>
         </div>
 
         {/* Author Info */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <div>
-            <p className="font-semibold text-gray-900">{testimonial.name}</p>
-            <p className="text-sm text-gray-600">{testimonial.role}</p>
+            <p className="font-semibold text-base-token">{testimonial.name}</p>
+            <p className="text-sm text-muted-token">{testimonial.role}</p>
           </div>
         </div>
       </div>
@@ -162,7 +177,7 @@ export const TestimonialsSection = () => {
   // Auto-rotate testimonials
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     }, 5000);
@@ -183,7 +198,7 @@ export const TestimonialsSection = () => {
   };
 
   const getVisibleTestimonials = () => {
-    const visible = [];
+    const visible: Testimonial[] = [];
     for (let i = 0; i < 3; i++) {
       const index = (currentIndex + i) % testimonials.length;
       visible.push(testimonials[index]);
@@ -192,19 +207,16 @@ export const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 overflow-hidden">
+    <section className="py-20 bg-surface-token overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-base-token mb-6">
             Trusted by Leading{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Retailers
-            </span>
+            <span className="gradient-brand bg-clip-text text-transparent">Retailers</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            See how retail businesses across industries are transforming their operations 
-            with UnAbandon AI's intelligent solutions
+          <p className="text-xl text-muted-token max-w-3xl mx-auto leading-relaxed">
+            See how retail businesses across industries are transforming their operations with UnAbandon AI's intelligent solutions
           </p>
         </div>
 
@@ -243,27 +255,14 @@ export const TestimonialsSection = () => {
 
           {/* Mobile/Tablet Single Card */}
           <div className="lg:hidden">
-            <TestimonialCard
-              testimonial={testimonials[currentIndex]}
-              isActive={true}
-            />
-            
+            <TestimonialCard testimonial={testimonials[currentIndex]} isActive={true} />
+
             {/* Mobile Navigation */}
             <div className="flex justify-center gap-4 mt-8">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm"
-              >
+              <Button variant="outline" size="icon" onClick={prevTestimonial} className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm">
                 <ChevronLeft className="w-5 h-5" />
               </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm"
-              >
+              <Button variant="outline" size="icon" onClick={nextTestimonial} className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm">
                 <ChevronRight className="w-5 h-5" />
               </Button>
             </div>
@@ -280,11 +279,8 @@ export const TestimonialsSection = () => {
                 setIsAutoPlaying(false);
                 setTimeout(() => setIsAutoPlaying(true), 10000);
               }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? "bg-blue-600 scale-125"
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? "scale-125" : ""}`}
+              style={index === currentIndex ? { backgroundColor: "rgb(var(--brand-primary))" } : { backgroundColor: "rgb(203 213 225)" }}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
@@ -293,16 +289,22 @@ export const TestimonialsSection = () => {
         {/* Stats Banner */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20">
-            <div className="text-3xl font-bold text-blue-600 mb-2">200+</div>
-            <div className="text-gray-600">Retail Partners</div>
+            <div className="text-3xl font-bold mb-2" style={{ color: "rgb(var(--brand-primary))" }}>
+              200+
+            </div>
+            <div className="text-muted-token">Retail Partners</div>
           </div>
           <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20">
-            <div className="text-3xl font-bold text-green-600 mb-2">45%</div>
-            <div className="text-gray-600">Average ROI Increase</div>
+            <div className="text-3xl font-bold mb-2" style={{ color: "rgb(var(--brand-primary))" }}>
+              45%
+            </div>
+            <div className="text-muted-token">Average ROI Increase</div>
           </div>
           <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20">
-            <div className="text-3xl font-bold text-purple-600 mb-2">99.9%</div>
-            <div className="text-gray-600">Platform Uptime</div>
+            <div className="text-3xl font-bold mb-2" style={{ color: "rgb(var(--brand-primary))" }}>
+              99.9%
+            </div>
+            <div className="text-muted-token">Platform Uptime</div>
           </div>
         </div>
       </div>

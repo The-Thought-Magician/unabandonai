@@ -44,66 +44,67 @@ import {
   Cpu,
   Activity
 } from 'lucide-react';
+import Navigation from '@/components/sections/navigation';
 
-const Navigation = () => (
-  <nav className="bg-white shadow-sm border-b">
-    <div className="container mx-auto px-6 py-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-8">
-          <div className="text-xl font-bold text-[#2E5A87]">UnAbandon AI</div>
-          <div className="hidden md:flex space-x-6">
-            <a href="/" className="text-gray-600 hover:text-[#2E5A87] transition-colors">Home</a>
-            <a href="/products" className="text-[#2E5A87] font-semibold">Products</a>
-            <a href="/about" className="text-gray-600 hover:text-[#2E5A87] transition-colors">About</a>
-            <a href="/contact" className="text-gray-600 hover:text-[#2E5A87] transition-colors">Contact</a>
-          </div>
-        </div>
-        <div className="flex items-center space-x-4">
-          <Button variant="outline" className="border-[#2E5A87] text-[#2E5A87] hover:bg-[#2E5A87] hover:text-white">
-            Login
-          </Button>
-          <Button className="bg-[#2E5A87] hover:bg-[#2E5A87]/90">
-            Start Free Trial
-          </Button>
-        </div>
-      </div>
-    </div>
-  </nav>
-);
+// const Navigation = () => (
+//   <nav className="bg-white shadow-sm border-b">
+//     <div className="container mx-auto px-6 py-4">
+//       <div className="flex items-center justify-between">
+//         <div className="flex items-center space-x-8">
+//           <div className="text-xl font-bold text-[#2E5A87]">UnAbandon AI</div>
+//           <div className="hidden md:flex space-x-6">
+//             <a href="/" className="text-gray-600 hover:text-[#2E5A87] transition-colors">Home</a>
+//             <a href="/products" className="text-[#2E5A87] font-semibold">Products</a>
+//             <a href="/team" className="text-gray-600 hover:text-[#2E5A87] transition-colors">About</a>
+//             <a href="/contact" className="text-gray-600 hover:text-[#2E5A87] transition-colors">Contact</a>
+//           </div>
+//         </div>
+//         <div className="flex items-center space-x-4">
+//           <Button variant="outline" className="border-[#2E5A87] text-[#2E5A87] hover:bg-[#2E5A87] hover:text-white">
+//             Login
+//           </Button>
+//           <Button className="bg-[#2E5A87] hover:bg-[#2E5A87]/90">
+//             Start Free Trial
+//           </Button>
+//         </div>
+//       </div>
+//     </div>
+//   </nav>
+// );
 
 const ProductHero = () => (
-  <section className="bg-gradient-to-br from-[#2E5A87] to-[#1e3a5f] text-white py-20">
+  <section className="gradient-hero text-inverse-token py-20">
     <div className="container mx-auto px-6">
       <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-6">UnAbandon AI Retail Intelligence Platform</h1>
-        <p className="text-xl mb-8 text-blue-100">
+        <h1 className="text-5xl font-bold mb-6 text-inverse-token">UnAbandon AI Retail Intelligence Platform</h1>
+        <p className="text-xl mb-8 text-inverse-token/85">
           "UnAbandon AI harnesses customer behavior intelligence across channels and modes into actionable intelligence for critical Retail applications – like Merchandising, Marketing, eCommerce and Supply Chain"
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-10">
-          <Button size="lg" className="bg-[#4CAF50] hover:bg-[#4CAF50]/90 text-white">
+          <Button size="lg" className="" style={{ backgroundColor: 'rgb(var(--brand-accent))', color: 'rgb(var(--text-inverse))' }}>
             <Play className="w-5 h-5 mr-2" />
             Watch Demo
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#2E5A87]">
+          <Button size="lg" className="" style={{ backgroundColor: 'rgb(var(--brand-accent))', color: 'rgb(var(--text-inverse))' }}>
             Start Free Trial
           </Button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
-            <div className="text-3xl font-bold text-[#4CAF50]">500+</div>
-            <div className="text-sm text-blue-100">Retail Partners</div>
+            <div className="text-3xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>500+</div>
+            <div className="text-sm text-inverse-token/70">Retail Partners</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-[#4CAF50]">98%</div>
-            <div className="text-sm text-blue-100">Customer Satisfaction</div>
+            <div className="text-3xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>98%</div>
+            <div className="text-sm text-inverse-token/70">Customer Satisfaction</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-[#4CAF50]">$2.5B</div>
-            <div className="text-sm text-blue-100">Revenue Generated</div>
+            <div className="text-3xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>$2.5B</div>
+            <div className="text-sm text-inverse-token/70">Revenue Generated</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-[#4CAF50]">45%</div>
-            <div className="text-sm text-blue-100">Avg ROI Increase</div>
+            <div className="text-3xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>45%</div>
+            <div className="text-sm text-inverse-token/70">Avg ROI Increase</div>
           </div>
         </div>
       </div>
@@ -112,21 +113,21 @@ const ProductHero = () => (
 );
 
 const ProductCard = ({ title, description, icon: Icon, features, pricing, screenshot, testimonial }) => (
-  <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-    <CardHeader className="bg-gradient-to-r from-[#2E5A87] to-[#1e3a5f] text-white">
+  <Card className="overflow-hidden hover:shadow-lg transition-shadow bg-elevate-token">
+    <CardHeader className="gradient-brand text-inverse-token">
       <div className="flex items-center space-x-3">
         <Icon className="w-8 h-8" />
         <div>
           <CardTitle className="text-xl">{title}</CardTitle>
-          <CardDescription className="text-blue-100">{description}</CardDescription>
+          <CardDescription className="text-inverse-token/80">{description}</CardDescription>
         </div>
       </div>
     </CardHeader>
     <CardContent className="p-6">
       <div className="space-y-6">
         {/* Screenshot Placeholder */}
-        <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center">
-          <div className="text-center text-gray-500">
+        <div className="bg-surface-token rounded-lg h-48 flex items-center justify-center">
+          <div className="text-center text-muted-token">
             <Icon className="w-16 h-16 mx-auto mb-2 opacity-50" />
             <p>Product Screenshot</p>
           </div>
@@ -138,7 +139,7 @@ const ProductCard = ({ title, description, icon: Icon, features, pricing, screen
           <div className="grid grid-cols-1 gap-2">
             {features.map((feature, idx) => (
               <div key={idx} className="flex items-center space-x-2">
-                <CheckCircle className="w-4 h-4 text-[#4CAF50]" />
+                <CheckCircle className="w-4 h-4" style={{ color: 'rgb(var(--brand-accent))' }} />
                 <span className="text-sm">{feature}</span>
               </div>
             ))}
@@ -146,27 +147,27 @@ const ProductCard = ({ title, description, icon: Icon, features, pricing, screen
         </div>
 
         {/* Pricing */}
-        <div className="bg-gray-50 rounded-lg p-4">
+        <div className="bg-surface-token rounded-lg p-4">
           <h4 className="font-semibold mb-2">Starting at</h4>
-          <div className="text-2xl font-bold text-[#2E5A87]">{pricing}</div>
-          <p className="text-sm text-gray-600">per month, billed annually</p>
+          <div className="text-2xl font-bold" style={{ color: 'rgb(var(--brand-primary))' }}>{pricing}</div>
+          <p className="text-sm text-muted-token">per month, billed annually</p>
         </div>
 
         {/* Testimonial */}
-        <div className="border-l-4 border-[#4CAF50] pl-4">
+        <div className="border-l-4 pl-4" style={{ borderColor: 'rgb(var(--brand-accent))' }}>
           <p className="text-sm italic mb-2">"{testimonial.quote}"</p>
           <div className="flex items-center space-x-2">
             <div className="text-xs font-semibold">{testimonial.author}</div>
-            <div className="text-xs text-gray-500">{testimonial.company}</div>
+            <div className="text-xs text-muted-token">{testimonial.company}</div>
           </div>
         </div>
 
         {/* Actions */}
         <div className="flex space-x-2">
-          <Button className="flex-1 bg-[#2E5A87] hover:bg-[#2E5A87]/90">
+          <Button className="flex-1" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}>
             Start Free Trial
           </Button>
-          <Button variant="outline" className="border-[#2E5A87] text-[#2E5A87]">
+          <Button variant="outline" className="" style={{ borderColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--brand-primary))' }}>
             Learn More
           </Button>
         </div>
@@ -201,11 +202,11 @@ const ComparisonTable = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-surface-token">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Product Comparison</h2>
-          <p className="text-xl text-gray-600">Compare features across our product suite</p>
+          <h2 className="text-3xl font-bold mb-4 text-base-token">Product Comparison</h2>
+          <p className="text-xl text-muted-token">Compare features across our product suite</p>
         </div>
 
         <Card>
@@ -224,7 +225,7 @@ const ComparisonTable = () => {
                         setSelectedProducts([...selectedProducts, key]);
                       }
                     }}
-                    className={selectedProducts.includes(key) ? "bg-[#2E5A87]" : ""}
+                    className={selectedProducts.includes(key) ? "" : ""} style={selectedProducts.includes(key) ? { backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' } : undefined}
                     disabled={!selectedProducts.includes(key) && selectedProducts.length >= 3}
                   >
                     {name}
@@ -247,11 +248,11 @@ const ComparisonTable = () => {
                 </thead>
                 <tbody>
                   {features.map((feature, idx) => (
-                    <tr key={idx} className="border-b hover:bg-gray-50">
+                    <tr key={idx} className="border-b hover:bg-surface-token">
                       <td className="py-3 px-4 font-medium">{feature}</td>
                       {selectedProducts.map(productKey => (
                         <td key={productKey} className="text-center py-3 px-4">
-                          <CheckCircle className="w-5 h-5 text-[#4CAF50] mx-auto" />
+                          <CheckCircle className="w-5 h-5 mx-auto" style={{ color: 'rgb(var(--brand-accent))' }} />
                         </td>
                       ))}
                     </tr>
@@ -320,25 +321,25 @@ const FeatureMatrix = () => {
     <section className="py-16">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Feature Matrix</h2>
-          <p className="text-xl text-gray-600">Choose the right plan for your business needs</p>
+          <h2 className="text-3xl font-bold mb-4 text-base-token">Feature Matrix</h2>
+          <p className="text-xl text-muted-token">Choose the right plan for your business needs</p>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full bg-white rounded-lg overflow-hidden shadow-lg">
+          <table className="w-full bg-elevate-token rounded-lg overflow-hidden shadow-lg">
             <thead>
               <tr>
-                <th className="text-left py-6 px-6 bg-gray-50 border-b">Features</th>
+                <th className="text-left py-6 px-6 bg-surface-token border-b">Features</th>
                 {plans.map((plan, idx) => (
-                  <th key={idx} className={`text-center py-6 px-6 border-b min-w-48 ${plan.color} ${plan.popular ? 'relative' : ''}`}>
+                  <th key={idx} className={`text-center py-6 px-6 border-b min-w-48 ${plan.popular ? 'relative' : ''} ${plan.popular ? '' : ''}`} style={plan.popular ? { backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' } : {}}>
                     {plan.popular && (
-                      <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-[#4CAF50]">
+                      <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2" style={{ backgroundColor: 'rgb(var(--brand-accent))' }}>
                         Most Popular
                       </Badge>
                     )}
                     <div className="text-lg font-bold">{plan.name}</div>
                     <div className="text-2xl font-bold mt-1">{plan.price}</div>
-                    <div className={`text-sm mt-1 ${plan.popular ? 'text-blue-100' : 'text-gray-600'}`}>
+                    <div className={`text-sm mt-1 ${plan.popular ? 'text-inverse-token/80' : ''}`} style={!plan.popular ? { color: 'rgb(var(--text-muted))' } : {}}>
                       {plan.description}
                     </div>
                   </th>
@@ -349,21 +350,21 @@ const FeatureMatrix = () => {
               {features.map((category, categoryIdx) => (
                 <>
                   <tr key={`category-${categoryIdx}`}>
-                    <td colSpan={4} className="py-4 px-6 bg-gray-100 font-semibold text-[#2E5A87]">
+                    <td colSpan={4} className="py-4 px-6 bg-surface-token font-semibold" style={{ color: 'rgb(var(--brand-primary))' }}>
                       {category.category}
                     </td>
                   </tr>
                   {category.items.map((item, itemIdx) => (
-                    <tr key={`${categoryIdx}-${itemIdx}`} className="hover:bg-gray-50">
+                    <tr key={`${categoryIdx}-${itemIdx}`} className="hover:bg-surface-token">
                       <td className="py-3 px-6 border-b">{item}</td>
                       <td className="text-center py-3 px-6 border-b">
-                        <CheckCircle className="w-5 h-5 text-[#4CAF50] mx-auto" />
+                        <CheckCircle className="w-5 h-5 mx-auto" style={{ color: 'rgb(var(--brand-accent))' }} />
                       </td>
                       <td className="text-center py-3 px-6 border-b">
-                        <CheckCircle className="w-5 h-5 text-[#4CAF50] mx-auto" />
+                        <CheckCircle className="w-5 h-5 mx-auto" style={{ color: 'rgb(var(--brand-accent))' }} />
                       </td>
                       <td className="text-center py-3 px-6 border-b">
-                        <CheckCircle className="w-5 h-5 text-[#4CAF50] mx-auto" />
+                        <CheckCircle className="w-5 h-5 mx-auto" style={{ color: 'rgb(var(--brand-accent))' }} />
                       </td>
                     </tr>
                   ))}
@@ -374,7 +375,7 @@ const FeatureMatrix = () => {
         </div>
 
         <div className="text-center mt-8">
-          <Button size="lg" className="bg-[#2E5A87] hover:bg-[#2E5A87]/90">
+          <Button size="lg" className="" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}>
             Compare All Plans
           </Button>
         </div>
@@ -402,11 +403,11 @@ const IntegrationShowcase = () => {
   const categories = [...new Set(integrations.map(i => i.category))];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-surface-token">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Seamless Integrations</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-3xl font-bold mb-4 text-base-token">Seamless Integrations</h2>
+          <p className="text-xl text-muted-token">
             Connect with your existing tools and platforms effortlessly
           </p>
         </div>
@@ -426,10 +427,10 @@ const IntegrationShowcase = () => {
                 {integrations
                   .filter(integration => integration.category === category)
                   .map((integration, idx) => (
-                    <Card key={idx} className="hover:shadow-md transition-shadow cursor-pointer">
+          <Card key={idx} className="hover:shadow-md transition-shadow cursor-pointer bg-elevate-token">
                       <CardContent className="p-6 text-center">
                         <div className="text-4xl mb-3">{integration.logo}</div>
-                        <h3 className="font-semibold text-[#2E5A87]">{integration.name}</h3>
+            <h3 className="font-semibold" style={{ color: 'rgb(var(--brand-primary))' }}>{integration.name}</h3>
                       </CardContent>
                     </Card>
                   ))}
@@ -439,11 +440,11 @@ const IntegrationShowcase = () => {
         </Tabs>
 
         <div className="text-center mt-12">
-          <Button variant="outline" className="border-[#2E5A87] text-[#2E5A87] mr-4">
+      <Button variant="outline" className="mr-4" style={{ borderColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--brand-primary))' }}>
             <ExternalLink className="w-4 h-4 mr-2" />
             View All Integrations
           </Button>
-          <Button className="bg-[#2E5A87] hover:bg-[#2E5A87]/90">
+      <Button className="" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}>
             Request Custom Integration
           </Button>
         </div>
@@ -476,8 +477,8 @@ const ROICalculator = () => {
     <section className="py-16">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">ROI Calculator</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-3xl font-bold mb-4 text-base-token">ROI Calculator</h2>
+          <p className="text-xl text-muted-token">
             See how much you could save with UnAbandon AI
           </p>
         </div>
@@ -519,35 +520,35 @@ const ROICalculator = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-[#2E5A87] to-[#1e3a5f] text-white">
+      <Card className="gradient-hero text-inverse-token">
             <CardHeader>
               <CardTitle>Your Potential ROI</CardTitle>
-              <CardDescription className="text-blue-100">
+        <CardDescription className="text-inverse-token/80">
                 Based on industry averages and our customer data
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 gap-4">
                 <div className="bg-white/10 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-[#4CAF50]">
+          <div className="text-2xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>
                     {results.recoveredCarts.toLocaleString()}
                   </div>
                   <div className="text-sm">Recovered Carts/Month</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-[#4CAF50]">
+          <div className="text-2xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>
                     ${results.additionalRevenue.toLocaleString()}
                   </div>
                   <div className="text-sm">Additional Annual Revenue</div>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-[#4CAF50]">
+          <div className="text-2xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>
                     {results.roi}%
                   </div>
                   <div className="text-sm">Return on Investment</div>
                 </div>
               </div>
-              <Button className="w-full bg-[#4CAF50] hover:bg-[#4CAF50]/90">
+        <Button className="w-full" style={{ backgroundColor: 'rgb(var(--brand-accent))', color: 'rgb(var(--text-inverse))' }}>
                 Get Detailed ROI Report
               </Button>
             </CardContent>
@@ -599,11 +600,11 @@ const ProductRoadmap = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-surface-token">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Product Roadmap</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-3xl font-bold mb-4 text-base-token">Product Roadmap</h2>
+          <p className="text-xl text-muted-token">
             See what's coming next in our product evolution
           </p>
         </div>
@@ -611,8 +612,8 @@ const ProductRoadmap = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {roadmapItems.map((item, idx) => (
             <Card key={idx} className={`relative ${
-              item.status === 'current' ? 'ring-2 ring-[#4CAF50]' : ''
-            }`}>
+              item.status === 'current' ? 'border-2' : ''
+            }`} style={item.status === 'current' ? { borderColor: 'rgb(var(--brand-accent))' } : {}}>
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-lg">{item.quarter}</CardTitle>
@@ -632,11 +633,7 @@ const ProductRoadmap = () => {
                 <ul className="space-y-2">
                   {item.items.map((feature, featureIdx) => (
                     <li key={featureIdx} className="flex items-start space-x-2">
-                      <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                        item.status === 'completed' ? 'bg-[#4CAF50]' :
-                        item.status === 'current' ? 'bg-blue-500' :
-                        'bg-gray-300'
-                      }`} />
+                      <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0`} style={{ backgroundColor: item.status === 'completed' ? 'rgb(var(--brand-accent))' : item.status === 'current' ? 'rgba(46,90,135,1)' : 'rgba(0,0,0,0.2)' }} />
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
@@ -647,7 +644,7 @@ const ProductRoadmap = () => {
         </div>
 
         <div className="text-center mt-8">
-          <Button variant="outline" className="border-[#2E5A87] text-[#2E5A87]">
+          <Button variant="outline" className="" style={{ borderColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--brand-primary))' }}>
             <Calendar className="w-4 h-4 mr-2" />
             Subscribe to Updates
           </Button>
@@ -666,10 +663,10 @@ const TrustIndicators = () => {
   ];
 
   return (
-    <section className="py-12 bg-white border-t border-b">
+    <section className="py-12 bg-elevate-token border-t border-b">
       <div className="container mx-auto px-6">
         <div className="text-center mb-8">
-          <h3 className="text-xl font-semibold text-gray-600 mb-6">
+          <h3 className="text-xl font-semibold text-muted-token mb-6">
             Trusted by leading retailers worldwide
           </h3>
         </div>
@@ -677,14 +674,14 @@ const TrustIndicators = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
           {certifications.map((cert, idx) => (
             <div key={idx} className="text-center">
-              <cert.icon className="w-8 h-8 mx-auto mb-2 text-[#2E5A87]" />
+              <cert.icon className="w-8 h-8 mx-auto mb-2" style={{ color: 'rgb(var(--brand-primary))' }} />
               <div className="text-sm font-medium">{cert.name}</div>
             </div>
           ))}
         </div>
 
         <div className="text-center">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-muted-token">
             Enterprise-grade security and compliance you can trust
           </p>
         </div>
@@ -694,28 +691,28 @@ const TrustIndicators = () => {
 };
 
 const CTASection = () => (
-  <section className="py-16 bg-gradient-to-br from-[#2E5A87] to-[#1e3a5f] text-white">
+  <section className="py-16 gradient-hero text-inverse-token">
     <div className="container mx-auto px-6 text-center">
       <h2 className="text-3xl font-bold mb-4">
         Ready to Transform Your Retail Business?
       </h2>
-      <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+      <p className="text-xl mb-8 text-inverse-token/80 max-w-2xl mx-auto">
         Join thousands of retailers who are already using UnAbandon AI to increase 
         sales, reduce costs, and improve customer satisfaction.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <Button size="lg" className="bg-[#4CAF50] hover:bg-[#4CAF50]/90">
+        <Button size="lg" className="" style={{ backgroundColor: 'rgb(var(--brand-accent))', color: 'rgb(var(--text-inverse))' }}>
           <Zap className="w-5 h-5 mr-2" />
           Start Free 30-Day Trial
         </Button>
-        <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#2E5A87]">
+        <Button size="lg" variant="outline" className="border-white text-white hover:bg-white" style={{ color: 'rgb(var(--text-inverse))' }}>
           <Headphones className="w-5 h-5 mr-2" />
           Schedule Demo
         </Button>
       </div>
       
-      <div className="mt-8 text-sm text-blue-100">
+      <div className="mt-8 text-sm text-inverse-token/80">
         No credit card required • Full access to all features • Cancel anytime
       </div>
     </div>
@@ -835,7 +832,7 @@ export default function ProductsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-surface-token">
       <Navigation />
       <ProductHero />
       
@@ -843,8 +840,8 @@ export default function ProductsPage() {
       <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Product Suite</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-3xl font-bold mb-4 text-base-token">Our Product Suite</h2>
+            <p className="text-xl text-muted-token">
               Complete AI solutions designed specifically for modern retail businesses
             </p>
           </div>

@@ -197,15 +197,15 @@ export default function ContactPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-surface-token">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
             <div className="mb-8">
-              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              <CheckCircle className="w-16 h-16 mx-auto mb-4" style={{ color: 'rgb(var(--brand-accent))' }} />
+              <h1 className="text-4xl font-bold text-base-token mb-4">
                 Thank You!
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-muted-token mb-8">
                 We've received your message and will get back to you within 24 hours.
               </p>
               <Button 
@@ -220,7 +220,7 @@ export default function ContactPage() {
                     message: "",
                   });
                 }}
-                className="bg-[var(--brand-primary)] hover:bg-[var(--brand-primary)]/90"
+                className="" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}
               >
                 Send Another Message
               </Button>
@@ -232,24 +232,24 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-surface-token">
       <Navigation />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+      <section className="gradient-hero text-inverse-token py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-inverse-token mb-6">
               Let's UnAbandon Your{" "}
-              <span className="text-[var(--brand-primary)]">Retail Potential</span>
+              <span className="bg-clip-text text-transparent gradient-brand">Retail Potential</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-inverse-token/80 mb-8 max-w-3xl mx-auto">
               Ready to transform your retail operations? Get in touch with our experts 
               and discover how UnAbandon AI can revolutionize your customer experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-[var(--brand-primary)] hover:bg-[var(--brand-primary)]/90 text-lg px-8 py-4"
+                className="text-lg px-8 py-4" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
@@ -258,7 +258,7 @@ export default function ContactPage() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="text-lg px-8 py-4 border-[var(--brand-primary)] text-[var(--brand-primary)] hover:bg-[var(--brand-primary)] hover:text-white"
+                className="text-lg px-8 py-4 border-2" style={{ borderColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--brand-primary))' }}
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Schedule Demo
@@ -273,23 +273,23 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-base-token mb-4">
                 Multiple Ways to Connect
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-muted-token">
                 Choose the best way to reach our team based on your needs
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               {contactMethods.map((method, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+                <Card key={index} className="hover:shadow-lg transition-shadow duration-300 bg-elevate-token">
                   <CardHeader className="pb-4">
-                    <div className={`w-12 h-12 rounded-lg ${method.bgColor} flex items-center justify-center mb-4`}>
-                      <method.icon className={`w-6 h-6 ${method.color}`} />
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4`} style={{ backgroundColor: 'rgba(46,90,135,0.08)' }}>
+                      <method.icon className={`w-6 h-6`} style={{ color: 'rgb(var(--brand-primary))' }} />
                     </div>
                     <CardTitle className="text-xl">{method.title}</CardTitle>
-                    <p className="text-gray-600">{method.description}</p>
+                    <p className="text-muted-token">{method.description}</p>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
@@ -297,7 +297,7 @@ export default function ContactPage() {
                         <Mail className="w-4 h-4 text-gray-400" />
                         <a 
                           href={`mailto:${method.contact}`}
-                          className="text-[var(--brand-primary)] hover:underline"
+                          className="hover:underline" style={{ color: 'rgb(var(--brand-primary))' }}
                         >
                           {method.contact}
                         </a>
@@ -306,7 +306,7 @@ export default function ContactPage() {
                         <Phone className="w-4 h-4 text-gray-400" />
                         <a 
                           href={`tel:${method.phone}`}
-                          className="text-[var(--brand-primary)] hover:underline"
+                          className="hover:underline" style={{ color: 'rgb(var(--brand-primary))' }}
                         >
                           {method.phone}
                         </a>
@@ -321,15 +321,15 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form and Office Locations */}
-      <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-surface-token">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div id="contact-form">
-              <Card className="shadow-lg">
+        <Card className="shadow-lg bg-elevate-token">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-                  <p className="text-gray-600">
+          <CardTitle className="text-2xl text-base-token">Send Us a Message</CardTitle>
+          <p className="text-muted-token">
                     Fill out the form below and we'll get back to you within 24 hours.
                   </p>
                 </CardHeader>
@@ -430,7 +430,7 @@ export default function ContactPage() {
 
                     <Button 
                       type="submit" 
-                      className="w-full bg-[var(--brand-primary)] hover:bg-[var(--brand-primary)]/90"
+                      className="w-full" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -450,32 +450,32 @@ export default function ContactPage() {
             {/* Office Locations */}
             <div>
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-base-token mb-4">
                   Visit Our Offices
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-muted-token">
                   We have offices around the world to serve you better.
                 </p>
               </div>
 
               <div className="space-y-6">
                 {offices.map((office, index) => (
-                  <Card key={index} className="hover:shadow-md transition-shadow duration-300">
+                  <Card key={index} className="hover:shadow-md transition-shadow duration-300 bg-elevate-token">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-[var(--brand-primary)] rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgb(var(--brand-primary))' }}>
                           <Building className="w-6 h-6 text-white" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-2">
-                            <h4 className="text-lg font-semibold text-gray-900">
+                            <h4 className="text-lg font-semibold text-base-token">
                               {office.city}
                             </h4>
-                            <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                            <span className="text-sm text-muted-token bg-surface-token px-2 py-1 rounded">
                               {office.label}
                             </span>
                           </div>
-                          <div className="space-y-2 text-sm text-gray-600">
+                          <div className="space-y-2 text-sm text-muted-token">
                             <div className="flex items-center gap-2">
                               <MapPin className="w-4 h-4" />
                               <span>{office.address}, {office.location}</span>
@@ -493,16 +493,16 @@ export default function ContactPage() {
               </div>
 
               {/* Meeting Scheduler Placeholder */}
-              <Card className="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+              <Card className="mt-8" style={{ background: 'linear-gradient(90deg, rgba(46,90,135,0.06), rgba(76,175,80,0.06))', borderColor: 'rgba(46,90,135,0.3)' }}>
                 <CardContent className="p-6 text-center">
-                  <Calendar className="w-12 h-12 text-[var(--brand-primary)] mx-auto mb-4" />
+                  <Calendar className="w-12 h-12 mx-auto mb-4" style={{ color: 'rgb(var(--brand-primary))' }} />
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">
                     Schedule a Meeting
                   </h4>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-muted-token mb-4">
                     Book a personalized demo or consultation with our experts.
                   </p>
-                  <Button className="bg-[var(--brand-primary)] hover:bg-[var(--brand-primary)]/90">
+                  <Button className="" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}>
                     Book Meeting
                     <ChevronRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -518,10 +518,10 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-base-token mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-muted-token">
                 Get answers to common questions about UnAbandon AI
               </p>
             </div>
@@ -539,7 +539,7 @@ export default function ContactPage() {
                       </span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-6 pl-14 text-gray-600">
+                  <AccordionContent className="pb-6 pl-14 text-muted-token">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -550,46 +550,46 @@ export default function ContactPage() {
       </section>
 
       {/* Support Channels */}
-      <section className="py-20 bg-gray-50">
+  <section className="py-20 bg-surface-token">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+    <h2 className="text-3xl font-bold text-base-token mb-4">
               Need Immediate Help?
             </h2>
-            <p className="text-lg text-gray-600 mb-12">
+    <p className="text-lg text-muted-token mb-12">
               Connect with us through your preferred channel
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="hover:shadow-lg transition-shadow duration-300">
+              <Card className="hover:shadow-lg transition-shadow duration-300 bg-elevate-token">
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <MessageCircle className="w-8 h-8 text-green-600" />
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: 'rgba(76,175,80,0.15)' }}>
+                    <MessageCircle className="w-8 h-8" style={{ color: 'rgb(var(--brand-accent))' }} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     Live Chat Support
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-muted-token mb-6">
                     Get instant help from our support team during business hours.
                   </p>
-                  <Button className="bg-green-600 hover:bg-green-700">
+                  <Button className="" style={{ backgroundColor: 'rgb(var(--brand-accent))', color: 'rgb(var(--text-inverse))' }}>
                     Start Chat
                   </Button>
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow duration-300">
+              <Card className="hover:shadow-lg transition-shadow duration-300 bg-elevate-token">
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <HeadphonesIcon className="w-8 h-8 text-purple-600" />
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style={{ backgroundColor: 'rgba(67,56,202,0.12)' }}>
+                    <HeadphonesIcon className="w-8 h-8" style={{ color: 'rgb(var(--brand-secondary))' }} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     24/7 Support Portal
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-muted-token mb-6">
                     Access our knowledge base and submit support tickets anytime.
                   </p>
-                  <Button className="bg-purple-600 hover:bg-purple-700">
+                  <Button className="" style={{ backgroundColor: 'rgb(var(--brand-secondary))', color: 'rgb(var(--text-inverse))' }}>
                     Access Portal
                   </Button>
                 </CardContent>

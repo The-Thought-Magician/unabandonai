@@ -49,35 +49,35 @@ export default function RetailersBrandsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-surface-token">
       <Navigation />
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 py-20 lg:py-32">
+      <section className="relative overflow-hidden gradient-hero text-inverse-token py-20 lg:py-32">
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         <div className="container relative mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <div className="mb-8 flex justify-center">
-              <Badge variant="secondary" className="px-4 py-2 text-sm font-medium bg-[#2E5A87]/10 text-[#2E5A87] border-0">
+              <Badge variant="secondary" className="px-4 py-2 text-sm font-medium border-0" style={{ backgroundColor: 'rgba(46,90,135,0.1)', color: 'rgb(var(--brand-primary))' }}>
                 <Building className="mr-2 h-4 w-4" />
                 For Retailers & Brands
               </Badge>
             </div>
             
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-[#333333] lg:text-6xl">
+            <h1 className="mb-6 text-4xl font-bold tracking-tight text-inverse-token lg:text-6xl">
               Empowering Retailers & Brands with{' '}
-              <span className="bg-gradient-to-r from-[#2E5A87] to-[#4CAF50] bg-clip-text text-transparent">
+              <span className="gradient-brand bg-clip-text text-transparent">
                 AI Intelligence
               </span>
             </h1>
             
-            <p className="mb-8 text-xl text-[#666666] lg:text-2xl max-w-3xl mx-auto leading-relaxed">
+            <p className="mb-8 text-xl text-inverse-token/80 lg:text-2xl max-w-3xl mx-auto leading-relaxed">
               Drive growth, optimize operations, and enhance customer experiences with our comprehensive AI-powered retail intelligence platform
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
-                className="bg-[#2E5A87] hover:bg-[#2E5A87]/90 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}
               >
                 <Rocket className="mr-2 h-5 w-5" />
                 Start Your AI Journey
@@ -85,7 +85,7 @@ export default function RetailersBrandsPage() {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="px-8 py-4 text-lg font-semibold rounded-xl border-2 border-[#2E5A87] text-[#2E5A87] hover:bg-[#2E5A87] hover:text-white transition-all duration-300"
+                className="px-8 py-4 text-lg font-semibold rounded-xl border-2 transition-all duration-300" style={{ borderColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--brand-primary))' }}
               >
                 View Case Studies
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -95,12 +95,12 @@ export default function RetailersBrandsPage() {
         </div>
         
         {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-[#4CAF50]/20 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-16 h-16 bg-[#2E5A87]/20 rounded-full animate-bounce"></div>
+        <div className="absolute top-20 left-10 w-20 h-20 rounded-full animate-pulse" style={{ backgroundColor: 'rgba(76,175,80,0.2)' }}></div>
+        <div className="absolute bottom-20 right-10 w-16 h-16 rounded-full animate-bounce" style={{ backgroundColor: 'rgba(46,90,135,0.2)' }}></div>
       </section>
 
       {/* Solutions Tabs Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-elevate-token">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
@@ -108,14 +108,14 @@ export default function RetailersBrandsPage() {
                 <TabsList className="grid w-full max-w-md grid-cols-2 p-2 bg-gray-100 rounded-xl">
                   <TabsTrigger 
                     value="retailers" 
-                    className="px-6 py-3 text-lg font-semibold rounded-lg data-[state=active]:bg-white data-[state=active]:text-[#2E5A87] data-[state=active]:shadow-md transition-all duration-300"
+                    className="px-6 py-3 text-lg font-semibold rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300" style={{ ['--tw-data-active-text' as any]: 'rgb(var(--brand-primary))' }}
                   >
                     <Store className="mr-2 h-5 w-5" />
                     Retailers
                   </TabsTrigger>
                   <TabsTrigger 
                     value="brands"
-                    className="px-6 py-3 text-lg font-semibold rounded-lg data-[state=active]:bg-white data-[state=active]:text-[#2E5A87] data-[state=active]:shadow-md transition-all duration-300"
+                    className="px-6 py-3 text-lg font-semibold rounded-lg data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300" style={{ ['--tw-data-active-text' as any]: 'rgb(var(--brand-primary))' }}
                   >
                     <Building className="mr-2 h-5 w-5" />
                     Brands
@@ -125,10 +125,10 @@ export default function RetailersBrandsPage() {
 
               <TabsContent value="retailers" className="space-y-12">
                 <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-[#333333] mb-4">
+                  <h2 className="text-3xl font-bold text-base-token mb-4">
                     Retail Intelligence Solutions
                   </h2>
-                  <p className="text-xl text-[#666666] max-w-3xl mx-auto">
+                  <p className="text-xl text-muted-token max-w-3xl mx-auto">
                     Transform your retail operations with AI-powered insights that drive revenue growth and operational efficiency
                   </p>
                 </div>
@@ -137,41 +137,41 @@ export default function RetailersBrandsPage() {
                 <div className="grid md:grid-cols-2 gap-8 mb-16">
                   {[
                     {
-                      icon: <BarChart3 className="h-8 w-8 text-[#2E5A87]" />,
+                      icon: <BarChart3 className="h-8 w-8" style={{ color: 'rgb(var(--brand-primary))' }} />,
                       title: "Store Analytics",
                       description: "Real-time performance insights across all locations with predictive analytics and automated reporting"
                     },
                     {
-                      icon: <Users className="h-8 w-8 text-[#4CAF50]" />,
+                      icon: <Users className="h-8 w-8" style={{ color: 'rgb(var(--brand-accent))' }} />,
                       title: "Customer Journey Mapping",
                       description: "Track and optimize every touchpoint from browsing to purchase with AI-powered behavioral analysis"
                     },
                     {
-                      icon: <Package className="h-8 w-8 text-[#2E5A87]" />,
+                      icon: <Package className="h-8 w-8" style={{ color: 'rgb(var(--brand-primary))' }} />,
                       title: "Inventory Management",
                       description: "Smart inventory optimization with demand forecasting and automated replenishment strategies"
                     },
                     {
-                      icon: <TrendingUp className="h-8 w-8 text-[#4CAF50]" />,
+                      icon: <TrendingUp className="h-8 w-8" style={{ color: 'rgb(var(--brand-accent))' }} />,
                       title: "Sales Forecasting",
                       description: "Accurate demand prediction using machine learning models trained on historical and market data"
                     }
                   ].map((solution, index) => (
-                    <Card key={index} className="group p-8 border-2 border-gray-100 hover:border-[#2E5A87]/30 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <Card key={index} className="group p-8 border-2 border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ borderColor: 'rgba(46,90,135,0.3)' }}>
                       <CardContent className="p-0">
-                        <div className="mb-4 p-3 bg-gray-50 rounded-xl w-fit group-hover:bg-[#2E5A87]/10 transition-colors duration-300">
+                        <div className="mb-4 p-3 bg-gray-50 rounded-xl w-fit transition-colors duration-300" style={{ backgroundColor: 'rgba(46,90,135,0.1)' }}>
                           {solution.icon}
                         </div>
-                        <h3 className="text-xl font-bold text-[#333333] mb-3">{solution.title}</h3>
-                        <p className="text-[#666666] leading-relaxed">{solution.description}</p>
+                        <h3 className="text-xl font-bold text-base-token mb-3">{solution.title}</h3>
+                        <p className="text-muted-token leading-relaxed">{solution.description}</p>
                       </CardContent>
                     </Card>
                   ))}
                 </div>
 
                 {/* Benefits */}
-                <div className="bg-gradient-to-r from-[#2E5A87]/5 to-[#4CAF50]/5 rounded-3xl p-8 lg:p-12">
-                  <h3 className="text-2xl font-bold text-[#333333] mb-8 text-center">Key Benefits for Retailers</h3>
+                <div className="rounded-3xl p-8 lg:p-12" style={{ background: 'linear-gradient(90deg, rgba(46,90,135,0.05), rgba(76,175,80,0.05))' }}>
+                  <h3 className="text-2xl font-bold text-base-token mb-8 text-center">Key Benefits for Retailers</h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
                       "Increase conversion rates by 25%+",
@@ -180,8 +180,8 @@ export default function RetailersBrandsPage() {
                       "Improve profit margins through smart pricing"
                     ].map((benefit, index) => (
                       <div key={index} className="flex items-start space-x-3">
-                        <CheckCircle className="h-6 w-6 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                        <span className="text-[#333333] font-medium">{benefit}</span>
+                        <CheckCircle className="h-6 w-6 flex-shrink-0 mt-0.5" style={{ color: 'rgb(var(--brand-accent))' }} />
+                        <span className="text-base-token font-medium">{benefit}</span>
                       </div>
                     ))}
                   </div>
@@ -190,10 +190,10 @@ export default function RetailersBrandsPage() {
 
               <TabsContent value="brands" className="space-y-12">
                 <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-[#333333] mb-4">
+                  <h2 className="text-3xl font-bold text-base-token mb-4">
                     Brand Intelligence Solutions
                   </h2>
-                  <p className="text-xl text-[#666666] max-w-3xl mx-auto">
+                  <p className="text-xl text-muted-token max-w-3xl mx-auto">
                     Maximize your brand performance with comprehensive market intelligence and consumer insights
                   </p>
                 </div>
@@ -202,41 +202,41 @@ export default function RetailersBrandsPage() {
                 <div className="grid md:grid-cols-2 gap-8 mb-16">
                   {[
                     {
-                      icon: <Eye className="h-8 w-8 text-[#2E5A87]" />,
+                      icon: <Eye className="h-8 w-8" style={{ color: 'rgb(var(--brand-primary))' }} />,
                       title: "Brand Performance Analytics",
                       description: "Monitor brand health metrics, sentiment analysis, and competitive positioning across all channels"
                     },
                     {
-                      icon: <Brain className="h-8 w-8 text-[#4CAF50]" />,
+                      icon: <Brain className="h-8 w-8" style={{ color: 'rgb(var(--brand-accent))' }} />,
                       title: "Market Intelligence",
                       description: "Stay ahead with real-time market trends, competitor analysis, and emerging opportunity identification"
                     },
                     {
-                      icon: <Users className="h-8 w-8 text-[#2E5A87]" />,
+                      icon: <Users className="h-8 w-8" style={{ color: 'rgb(var(--brand-primary))' }} />,
                       title: "Consumer Insights",
                       description: "Deep dive into consumer behavior patterns, preferences, and purchase drivers with AI analytics"
                     },
                     {
-                      icon: <Target className="h-8 w-8 text-[#4CAF50]" />,
+                      icon: <Target className="h-8 w-8" style={{ color: 'rgb(var(--brand-accent))' }} />,
                       title: "Channel Optimization",
                       description: "Optimize distribution strategies and channel performance with data-driven recommendations"
                     }
                   ].map((solution, index) => (
-                    <Card key={index} className="group p-8 border-2 border-gray-100 hover:border-[#2E5A87]/30 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <Card key={index} className="group p-8 border-2 border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ borderColor: 'rgba(46,90,135,0.3)' }}>
                       <CardContent className="p-0">
-                        <div className="mb-4 p-3 bg-gray-50 rounded-xl w-fit group-hover:bg-[#2E5A87]/10 transition-colors duration-300">
+                        <div className="mb-4 p-3 bg-gray-50 rounded-xl w-fit transition-colors duration-300" style={{ backgroundColor: 'rgba(46,90,135,0.1)' }}>
                           {solution.icon}
                         </div>
-                        <h3 className="text-xl font-bold text-[#333333] mb-3">{solution.title}</h3>
-                        <p className="text-[#666666] leading-relaxed">{solution.description}</p>
+                        <h3 className="text-xl font-bold text-base-token mb-3">{solution.title}</h3>
+                        <p className="text-muted-token leading-relaxed">{solution.description}</p>
                       </CardContent>
                     </Card>
                   ))}
                 </div>
 
                 {/* Benefits */}
-                <div className="bg-gradient-to-r from-[#4CAF50]/5 to-[#2E5A87]/5 rounded-3xl p-8 lg:p-12">
-                  <h3 className="text-2xl font-bold text-[#333333] mb-8 text-center">Key Benefits for Brands</h3>
+                <div className="rounded-3xl p-8 lg:p-12" style={{ background: 'linear-gradient(90deg, rgba(76,175,80,0.05), rgba(46,90,135,0.05))' }}>
+                  <h3 className="text-2xl font-bold text-base-token mb-8 text-center">Key Benefits for Brands</h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {[
                       "Track brand health in real-time",
@@ -245,8 +245,8 @@ export default function RetailersBrandsPage() {
                       "Maximize marketing ROI by 35%+"
                     ].map((benefit, index) => (
                       <div key={index} className="flex items-start space-x-3">
-                        <CheckCircle className="h-6 w-6 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                        <span className="text-[#333333] font-medium">{benefit}</span>
+                        <CheckCircle className="h-6 w-6 flex-shrink-0 mt-0.5" style={{ color: 'rgb(var(--brand-accent))' }} />
+                        <span className="text-base-token font-medium">{benefit}</span>
                       </div>
                     ))}
                   </div>
@@ -258,13 +258,13 @@ export default function RetailersBrandsPage() {
       </section>
 
       {/* Success Stories Section */}
-      <section className="py-20 bg-gray-50">
+  <section className="py-20 bg-surface-token">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#333333] mb-4">
+    <h2 className="text-3xl font-bold text-base-token mb-4">
               Success Stories
             </h2>
-            <p className="text-xl text-[#666666] max-w-2xl mx-auto">
+    <p className="text-xl text-muted-token max-w-2xl mx-auto">
               See how leading retailers and brands are transforming their businesses with UnAbandon AI
             </p>
           </div>
@@ -293,29 +293,29 @@ export default function RetailersBrandsPage() {
                 metrics: ["50% higher CLV", "30% increase in repeat purchases", "45% improvement in satisfaction"]
               }
             ].map((story, index) => (
-              <Card key={index} className="p-8 bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <Card key={index} className="p-8 bg-elevate-token border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <CardContent className="p-0">
                   <div className="mb-4">
-                    <Badge variant="outline" className="text-[#2E5A87] border-[#2E5A87]/30">
+                    <Badge variant="outline" className="" style={{ color: 'rgb(var(--brand-primary))', borderColor: 'rgba(46,90,135,0.3)' }}>
                       {story.industry}
                     </Badge>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-[#333333] mb-2">{story.company}</h3>
+                  <h3 className="text-xl font-bold text-base-token mb-2">{story.company}</h3>
                   
                   <div className="mb-4">
-                    <span className="text-2xl font-bold text-[#4CAF50]">{story.result}</span>
+                    <span className="text-2xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>{story.result}</span>
                   </div>
                   
-                  <blockquote className="text-[#666666] italic mb-6 leading-relaxed">
+                  <blockquote className="text-muted-token italic mb-6 leading-relaxed">
                     "{story.quote}"
                   </blockquote>
                   
                   <div className="space-y-2">
                     {story.metrics.map((metric, metricIndex) => (
                       <div key={metricIndex} className="flex items-center space-x-2">
-                        <Star className="h-4 w-4 text-[#4CAF50]" />
-                        <span className="text-sm text-[#666666]">{metric}</span>
+                        <Star className="h-4 w-4" style={{ color: 'rgb(var(--brand-accent))' }} />
+                        <span className="text-sm text-muted-token">{metric}</span>
                       </div>
                     ))}
                   </div>
@@ -327,13 +327,13 @@ export default function RetailersBrandsPage() {
       </section>
 
       {/* Integration Capabilities */}
-      <section className="py-20 bg-white">
+  <section className="py-20 bg-elevate-token">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-[#333333] mb-4">
+    <h2 className="text-3xl font-bold text-base-token mb-4">
               Seamless Integration Capabilities
             </h2>
-            <p className="text-xl text-[#666666] max-w-2xl mx-auto">
+    <p className="text-xl text-muted-token max-w-2xl mx-auto">
               Connect with your existing systems and start seeing results in days, not months
             </p>
           </div>
@@ -349,25 +349,25 @@ export default function RetailersBrandsPage() {
               { name: "Google Analytics", category: "Web Analytics" },
               { name: "Tableau", category: "BI Tools" }
             ].map((integration, index) => (
-              <Card key={index} className="p-6 text-center border-2 border-gray-100 hover:border-[#2E5A87]/30 hover:shadow-lg transition-all duration-300">
+              <Card key={index} className="p-6 text-center border-2 border-gray-100 hover:shadow-lg transition-all duration-300" style={{ borderColor: 'rgba(46,90,135,0.3)' }}>
                 <CardContent className="p-0">
                   <div className="mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#2E5A87]/10 to-[#4CAF50]/10 rounded-xl mx-auto flex items-center justify-center">
-                      <Zap className="h-6 w-6 text-[#2E5A87]" />
+                    <div className="w-12 h-12 rounded-xl mx-auto flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(46,90,135,0.1), rgba(76,175,80,0.1))' }}>
+                      <Zap className="h-6 w-6" style={{ color: 'rgb(var(--brand-primary))' }} />
                     </div>
                   </div>
-                  <h4 className="font-bold text-[#333333] mb-1">{integration.name}</h4>
-                  <p className="text-sm text-[#666666]">{integration.category}</p>
+                  <h4 className="font-bold text-base-token mb-1">{integration.name}</h4>
+                  <p className="text-sm text-muted-token">{integration.category}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
 
           <div className="text-center">
-            <p className="text-lg text-[#666666] mb-6">
+            <p className="text-lg text-muted-token mb-6">
               Don't see your platform? We support 100+ integrations and custom APIs.
             </p>
-            <Button variant="outline" className="px-8 py-3 border-2 border-[#2E5A87] text-[#2E5A87] hover:bg-[#2E5A87] hover:text-white">
+            <Button variant="outline" className="px-8 py-3 border-2" style={{ borderColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--brand-primary))' }}>
               View All Integrations
             </Button>
           </div>
@@ -375,13 +375,13 @@ export default function RetailersBrandsPage() {
       </section>
 
       {/* Partnership Benefits */}
-      <section className="py-20 bg-gradient-to-br from-[#2E5A87]/5 to-[#4CAF50]/5">
+  <section className="py-20" style={{ background: 'linear-gradient(135deg, rgba(46,90,135,0.05), rgba(76,175,80,0.05))' }}>
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-[#333333] mb-6">
+    <h2 className="text-3xl font-bold text-base-token mb-6">
               Partnership Benefits
             </h2>
-            <p className="text-xl text-[#666666] mb-12 max-w-2xl mx-auto">
+    <p className="text-xl text-muted-token mb-12 max-w-2xl mx-auto">
               Join hundreds of leading retailers and brands who trust UnAbandon AI to power their growth
             </p>
 
@@ -404,11 +404,11 @@ export default function RetailersBrandsPage() {
                 }
               ].map((benefit, index) => (
                 <div key={index} className="text-center">
-                  <div className="mb-4 p-4 bg-white rounded-2xl shadow-lg w-fit mx-auto">
+                  <div className="mb-4 p-4 bg-elevate-token rounded-2xl shadow-lg w-fit mx-auto">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-[#333333] mb-3">{benefit.title}</h3>
-                  <p className="text-[#666666] leading-relaxed">{benefit.description}</p>
+                  <h3 className="text-xl font-bold text-base-token mb-3">{benefit.title}</h3>
+                  <p className="text-muted-token leading-relaxed">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -417,14 +417,14 @@ export default function RetailersBrandsPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-white">
+  <section className="py-20 bg-elevate-token">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-[#333333] mb-4">
+      <h2 className="text-3xl font-bold text-base-token mb-4">
                 Start Your Partnership Journey
               </h2>
-              <p className="text-xl text-[#666666] max-w-2xl mx-auto">
+      <p className="text-xl text-muted-token max-w-2xl mx-auto">
                 Ready to transform your retail operations with AI? Let's discuss how UnAbandon AI can drive your growth.
               </p>
             </div>
@@ -434,7 +434,7 @@ export default function RetailersBrandsPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-semibold text-[#333333] mb-2">
+                      <label htmlFor="name" className="block text-sm font-semibold text-base-token mb-2">
                         Full Name *
                       </label>
                       <Input
@@ -444,13 +444,13 @@ export default function RetailersBrandsPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="h-12 border-2 border-gray-200 focus:border-[#2E5A87] rounded-xl"
+                        className="h-12 border-2 border-gray-200 rounded-xl focus:outline-none"
                         placeholder="Enter your full name"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="company" className="block text-sm font-semibold text-[#333333] mb-2">
+                      <label htmlFor="company" className="block text-sm font-semibold text-base-token mb-2">
                         Company *
                       </label>
                       <Input
@@ -460,7 +460,7 @@ export default function RetailersBrandsPage() {
                         value={formData.company}
                         onChange={handleInputChange}
                         required
-                        className="h-12 border-2 border-gray-200 focus:border-[#2E5A87] rounded-xl"
+                        className="h-12 border-2 border-gray-200 rounded-xl focus:outline-none"
                         placeholder="Enter your company name"
                       />
                     </div>
@@ -468,7 +468,7 @@ export default function RetailersBrandsPage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-[#333333] mb-2">
+                      <label htmlFor="email" className="block text-sm font-semibold text-base-token mb-2">
                         Email Address *
                       </label>
                       <Input
@@ -478,13 +478,13 @@ export default function RetailersBrandsPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="h-12 border-2 border-gray-200 focus:border-[#2E5A87] rounded-xl"
+                        className="h-12 border-2 border-gray-200 rounded-xl focus:outline-none"
                         placeholder="Enter your email address"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="type" className="block text-sm font-semibold text-[#333333] mb-2">
+                      <label htmlFor="type" className="block text-sm font-semibold text-base-token mb-2">
                         Business Type *
                       </label>
                       <select
@@ -493,7 +493,7 @@ export default function RetailersBrandsPage() {
                         value={formData.type}
                         onChange={handleInputChange}
                         required
-                        className="w-full h-12 border-2 border-gray-200 focus:border-[#2E5A87] rounded-xl px-4 bg-white"
+                        className="w-full h-12 border-2 border-gray-200 rounded-xl px-4 bg-elevate-token focus:outline-none"
                       >
                         <option value="retailer">Retailer</option>
                         <option value="brand">Brand</option>
@@ -503,7 +503,7 @@ export default function RetailersBrandsPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-[#333333] mb-2">
+                    <label htmlFor="message" className="block text-sm font-semibold text-base-token mb-2">
                       Tell us about your needs
                     </label>
                     <Textarea
@@ -512,7 +512,7 @@ export default function RetailersBrandsPage() {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={5}
-                      className="border-2 border-gray-200 focus:border-[#2E5A87] rounded-xl"
+                      className="border-2 border-gray-200 rounded-xl focus:outline-none"
                       placeholder="Describe your current challenges, goals, and how we can help you succeed..."
                     />
                   </div>
@@ -521,7 +521,7 @@ export default function RetailersBrandsPage() {
                     <Button 
                       type="submit"
                       size="lg"
-                      className="bg-[#2E5A87] hover:bg-[#2E5A87]/90 text-white px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      className="px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{ backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' }}
                     >
                       <Rocket className="mr-2 h-5 w-5" />
                       Start Partnership Discussion
@@ -531,7 +531,7 @@ export default function RetailersBrandsPage() {
                       type="button"
                       variant="outline"
                       size="lg"
-                      className="px-8 py-4 text-lg font-semibold rounded-xl border-2 border-[#4CAF50] text-[#4CAF50] hover:bg-[#4CAF50] hover:text-white transition-all duration-300"
+                      className="px-8 py-4 text-lg font-semibold rounded-xl border-2 transition-all duration-300" style={{ borderColor: 'rgb(var(--brand-accent))', color: 'rgb(var(--brand-accent))' }}
                     >
                       Schedule Demo
                       <ArrowRight className="ml-2 h-5 w-5" />

@@ -1,87 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
-@custom-variant dark (&:is(.dark *));
+/* Removed unsupported at-rule to avoid lints: @custom-variant dark (&:is(.dark *)); */
 
-@theme {
-  /* Shadcn/UI Colors */
-  --color-background: #ffffff;
-  --color-foreground: #0a0a0a;
-  --color-card: #ffffff;
-  --color-card-foreground: #0a0a0a;
-  --color-popover: #ffffff;
-  --color-popover-foreground: #0a0a0a;
-  --color-primary: #171717;
-  --color-primary-foreground: #fafafa;
-  --color-secondary: #f5f5f5;
-  --color-secondary-foreground: #171717;
-  --color-muted: #f5f5f5;
-  --color-muted-foreground: #737373;
-  --color-accent: #f5f5f5;
-  --color-accent-foreground: #171717;
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #fafafa;
-  --color-border: #e5e5e5;
-  --color-input: #e5e5e5;
-  --color-ring: #0a0a0a;
-  --color-chart-1: #e67e22;
-  --color-chart-2: #2d8659;
-  --color-chart-3: #1e3a5f;
-  --color-chart-4: #f1c40f;
-  --color-chart-5: #e74c3c;
-  --color-sidebar: #f7f7f7;
-  --color-sidebar-foreground: #404040;
-  --color-sidebar-primary: #1a1a1a;
-  --color-sidebar-primary-foreground: #fafafa;
-  --color-sidebar-accent: #f0f0f0;
-  --color-sidebar-accent-foreground: #1a1a1a;
-  --color-sidebar-border: #d4d4d8;
-  --color-sidebar-ring: #3b82f6;
-
-  /* Shadcn/UI Radii */
-  --radius-lg: 0.5rem;
-  --radius-md: calc(0.5rem - 2px);
-  --radius-sm: calc(0.5rem - 4px);
-
-  /* Shadcn/UI Animations */
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-
-  /* Custom Design Tokens - Enhanced Modern Palette */
-  --color-brand-primary: #1e40af; /* Modern vibrant blue */
-  --color-brand-secondary: #06b6d4; /* Cyan accent */
-  --color-brand-green: #10b981; /* Modern emerald green */
-  --color-brand-purple: #8b5cf6; /* Modern violet */
-  --color-brand-orange: #f59e0b; /* Warm orange */
-  --color-text-primary: #1f2937; /* Dark gray */
-  --color-text-secondary: #6b7280; /* Medium gray */
-  --color-background-light-gray: #f9fafb; /* Ultra light gray */
-  --color-background-gradient-start: #0f172a; /* Dark slate */
-  --color-background-gradient-end: #1e293b; /* Slate */
-  --color-illustration-blue: #93c5fd; /* Light blue */
-  --color-accent-pink: #ec4899; /* Modern pink */
-  --color-accent-yellow: #fbbf24; /* Bright yellow */
-
-  --font-display: "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
-}
+/* Removed unsupported @theme block (Tailwind v4 CSS-first doesn’t need it). Values are defined directly in :root below. */
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -109,48 +31,64 @@
 
 @layer base {
   :root {
-    /* Shadcn/UI CSS Variables */
-    --background: var(--color-background);
-    --foreground: var(--color-foreground);
-    --card: var(--color-card);
-    --card-foreground: var(--color-card-foreground);
-    --popover: var(--color-popover);
-    --popover-foreground: var(--color-popover-foreground);
-    --primary: var(--color-primary);
-    --primary-foreground: var(--color-primary-foreground);
-    --secondary: var(--color-secondary);
-    --secondary-foreground: var(--color-secondary-foreground);
-    --muted: var(--color-muted);
-    --muted-foreground: var(--color-muted-foreground);
-    --accent: var(--color-accent);
-    --accent-foreground: var(--color-accent-foreground);
-    --destructive: var(--color-destructive);
-    --destructive-foreground: var(--color-destructive-foreground);
-    --border: var(--color-border);
-    --input: var(--color-input);
-    --ring: var(--color-ring);
-    --chart-1: var(--color-chart-1);
-    --chart-2: var(--color-chart-2);
-    --chart-3: var(--color-chart-3);
-    --chart-4: var(--color-chart-4);
-    --chart-5: var(--color-chart-5);
-    --radius: var(--radius-lg);
-    --sidebar-background: var(--color-sidebar);
-    --sidebar-foreground: var(--color-sidebar-foreground);
-    --sidebar-primary: var(--color-sidebar-primary);
-    --sidebar-primary-foreground: var(--color-sidebar-primary-foreground);
-    --sidebar-accent: var(--color-sidebar-accent);
-    --sidebar-accent-foreground: var(--color-sidebar-accent-foreground);
-    --sidebar-border: var(--color-sidebar-border);
-    --sidebar-ring: var(--color-sidebar-ring);
+    /* Shadcn/UI CSS Variables (direct values) */
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0a;
+    --primary: #171717;
+    --primary-foreground: #fafafa;
+    --secondary: #f5f5f5;
+    --secondary-foreground: #171717;
+    --muted: #f5f5f5;
+    --muted-foreground: #737373;
+    --accent: #f5f5f5;
+    --accent-foreground: #171717;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #0a0a0a;
+    --chart-1: #e67e22;
+    --chart-2: #2d8659;
+    --chart-3: #1e3a5f;
+    --chart-4: #f1c40f;
+    --chart-5: #e74c3c;
+    --radius: 0.5rem;
+    --sidebar-background: #f7f7f7;
+    --sidebar-foreground: #404040;
+    --sidebar-primary: #1a1a1a;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #f0f0f0;
+    --sidebar-accent-foreground: #1a1a1a;
+    --sidebar-border: #d4d4d8;
+    --sidebar-ring: #3b82f6;
 
-    /* Custom CSS Variables */
-    --brand-primary: var(--color-brand-primary);
-    --brand-green: var(--color-brand-green);
-    --text-primary: var(--color-text-primary);
-    --text-secondary: var(--color-text-secondary);
-    --background-light-gray: var(--color-background-light-gray);
-    --illustration-blue: var(--color-illustration-blue);
+    /* Unified Brand Theme Tokens (single source of truth) */
+    --brand-primary: 46 90 135;       /* #2E5A87 */
+    --brand-secondary: 67 56 202;     /* indigo-600 */
+    --brand-accent: 76 175 80;        /* #4CAF50 */
+    --bg: 248 250 252;                /* slate-50 */
+    --bg-elev: 255 255 255;           /* white */
+    --bg-hero: 15 23 42;              /* #0F172A */
+    --text: 15 23 42;                 /* slate-900 */
+    --text-muted: 100 116 139;        /* slate-500 */
+    --text-inverse: 255 255 255;      /* white */
+    --ring-rgb: 99 102 241;           /* indigo-500 (RGB for tokens) */
+    --radius-brand: 12px;             /* brand rounding */
+  }
+
+  /* Dark mode scaffold */
+  .dark {
+    --bg: 2 6 23;            /* #020617 */
+    --bg-elev: 15 23 42;     /* #0F172A */
+    --text: 226 232 240;     /* slate-200 */
+    --text-muted: 148 163 184; /* slate-400 */
+    --text-inverse: 255 255 255;
   }
 
   /* Base Typography */
@@ -175,7 +113,7 @@
     font-size: 3rem; /* 48px */
     font-weight: 700;
     line-height: 1.2;
-    color: var(--text-primary);
+    color: rgb(var(--text));
   }
 
   h2 {
@@ -183,7 +121,7 @@
     font-size: 1.75rem; /* 28px */
     font-weight: 400;
     line-height: 1.4;
-    color: var(--text-primary);
+    color: rgb(var(--text));
   }
 
   p {
@@ -191,7 +129,7 @@
     font-size: 1rem; /* 16px */
     font-weight: 400;
     line-height: 1.5;
-    color: var(--text-primary);
+    color: rgb(var(--text));
   }
 
   a {
@@ -211,7 +149,7 @@
     text-transform: uppercase;
     padding: 1rem 2rem; /* 16px 32px */
     border-radius: 0.5rem; /* 8px */
-    background-color: var(--brand-primary);
+    background-color: rgb(var(--brand-primary));
     color: #ffffff;
     cursor: pointer;
     border: none;
@@ -336,6 +274,50 @@
   .gradient-modern-full {
     background: linear-gradient(45deg, var(--color-brand-primary), var(--color-brand-secondary), var(--color-brand-green), var(--color-brand-purple));
   }
+
+  /* Unified Theme Utilities */
+  .text-base-token { color: rgb(var(--text)); }
+  .text-muted-token { color: rgb(var(--text-muted)); }
+  .text-inverse-token { color: rgb(var(--text-inverse)); }
+  .bg-surface-token { background-color: rgb(var(--bg)); }
+  .bg-elevate-token { background-color: rgb(var(--bg-elev)); }
+  .ring-brand-token { --tw-ring-color: rgb(var(--ring-rgb)); }
+  .rounded-brand { border-radius: var(--radius-brand); }
+  .shadow-soft-token { box-shadow: 0 10px 30px rgba(2,6,23,0.08); }
+  .shadow-strong-token { box-shadow: 0 20px 60px rgba(2,6,23,0.16); }
+
+  .gradient-brand {
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--brand-primary)) 0%,
+      rgb(var(--brand-secondary)) 50%,
+      rgb(var(--brand-accent)) 100%
+    );
+  }
+
+  .gradient-hero {
+    background-image: linear-gradient(
+      135deg,
+      rgb(var(--bg-hero)) 0%,
+      rgba(46, 90, 135, 0.5) 50%,
+      rgba(67, 56, 202, 0.3) 100%
+    );
+  }
+
+  .btn-primary {
+    background-color: rgb(var(--brand-primary));
+    color: rgb(var(--text-inverse));
+    border-radius: var(--radius-brand);
+    box-shadow: 0 8px 24px rgba(2,6,23,0.12);
+  }
+  .btn-primary:hover { opacity: 0.9; }
+
+  .btn-outline-primary {
+    border: 2px solid rgb(var(--brand-primary));
+    color: rgb(var(--brand-primary));
+    border-radius: var(--radius-brand);
+  }
+  .btn-outline-primary:hover { background-color: rgba(46,90,135,0.08); }
 
   /* Glass Morphism Effect */
   .glass-effect {
