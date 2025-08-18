@@ -7,6 +7,14 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "UnAbandon AI - Intelligent Retail Solutions",
   description: "Transform your retail operations with AI-powered intelligence. Single Source of Intelligence (SSOI) to power Retail AI Apps.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" },
+      { url: "/icon.svg", sizes: "32x32", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
