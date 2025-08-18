@@ -33,7 +33,7 @@ export default function HeroSection() {
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-inverse-token mb-8 animate-slide-in-up">
                 Let's make Retail{' '}
-                <span className="gradient-brand bg-clip-text text-transparent animate-gradient">
+                <span className="text-border-white gradient-brand bg-clip-text text-transparent animate-gradient ">
                   Intelligent, Agile
                 </span>{' '}
                 and Customer-Centric!
@@ -114,7 +114,7 @@ export default function HeroSection() {
               </div>
               
               {/* Additional floating UI elements */}
-              <div className="absolute top-4 right-4 glass-effect-dark text-emerald-300 px-3 py-1 rounded-full text-xs font-semibold animate-float delay-700">
+              <div className="absolute top-8 right-4 glass-effect-dark text-emerald-300 px-3 py-1 rounded-full text-xs font-semibold animate-float delay-700">
                 AI Powered
               </div>
               <div className="absolute bottom-8 left-4 glass-effect-dark text-blue-300 px-3 py-1 rounded-full text-xs font-semibold animate-float delay-1200">

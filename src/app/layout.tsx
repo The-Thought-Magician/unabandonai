@@ -79,6 +79,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Set initial theme before paint to avoid FOUC */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => { try { const s = localStorage.getItem('theme'); const m = window.matchMedia('(prefers-color-scheme: dark)').matches; const d = s ? s === 'dark' : m; const c = document.documentElement.classList; d ? c.add('dark') : c.remove('dark'); } catch(e){} })();`,
+          }}
+        />
         {/* Organization Schema */}
         <script
           type="application/ld+json"

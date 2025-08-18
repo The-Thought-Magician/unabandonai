@@ -288,19 +288,19 @@ export const TestimonialsSection = () => {
 
         {/* Stats Banner */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20">
+          <div className="text-center p-6 rounded-2xl bg-green/60 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold mb-2" style={{ color: "rgb(var(--brand-primary))" }}>
               200+
             </div>
             <div className="text-muted-token">Retail Partners</div>
           </div>
-          <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20">
+          <div className="text-center p-6 rounded-2xl bg-green/60 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold mb-2" style={{ color: "rgb(var(--brand-primary))" }}>
               45%
             </div>
             <div className="text-muted-token">Average ROI Increase</div>
           </div>
-          <div className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/20">
+          <div className="text-center p-6 rounded-2xl bg-green/60 backdrop-blur-sm border border-white/20">
             <div className="text-3xl font-bold mb-2" style={{ color: "rgb(var(--brand-primary))" }}>
               99.9%
             </div>

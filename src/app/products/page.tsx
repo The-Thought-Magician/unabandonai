@@ -88,19 +88,19 @@ const ProductHero = () => (
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
-            <div className="text-3xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>500+</div>
+            <div className="text-3xl font-bold" style={{ color: 'rgb(white)' }}>500+</div>
             <div className="text-sm text-inverse-token/70">Retail Partners</div>
           </div>
           <div>
-            <div className="text-3xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>98%</div>
+            <div className="text-3xl font-bold" style={{ color: 'rgb(white)' }}>98%</div>
             <div className="text-sm text-inverse-token/70">Customer Satisfaction</div>
           </div>
           <div>
-            <div className="text-3xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>$2.5B</div>
+            <div className="text-3xl font-bold" style={{ color: 'rgb(white)' }}>$2.5B</div>
             <div className="text-sm text-inverse-token/70">Revenue Generated</div>
           </div>
           <div>
-            <div className="text-3xl font-bold" style={{ color: 'rgb(var(--brand-accent))' }}>45%</div>
+            <div className="text-3xl font-bold" style={{ color: 'rgb(white)' }}>45%</div>
             <div className="text-sm text-inverse-token/70">Avg ROI Increase</div>
           </div>
         </div>
