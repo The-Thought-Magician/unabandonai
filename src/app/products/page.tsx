@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -47,47 +47,43 @@ import {
 import Navigation from '@/components/sections/navigation';
 import type { ComponentType } from 'react';
 
-// const Navigation = () => (
-//   <nav className="bg-white shadow-sm border-b">
-//     <div className="container mx-auto px-6 py-4">
-//       <div className="flex items-center justify-between">
-//         <div className="flex items-center space-x-8">
-//           <div className="text-xl font-bold text-[#2E5A87]">UnAbandon AI</div>
-//           <div className="hidden md:flex space-x-6">
-//             <a href="/" className="text-gray-600 hover:text-[#2E5A87] transition-colors">Home</a>
-//             <a href="/products" className="text-[#2E5A87] font-semibold">Products</a>
-//             <a href="/team" className="text-gray-600 hover:text-[#2E5A87] transition-colors">About</a>
-//             <a href="/contact" className="text-gray-600 hover:text-[#2E5A87] transition-colors">Contact</a>
-//           </div>
-//         </div>
-//         <div className="flex items-center space-x-4">
-//           <Button variant="outline" className="border-[#2E5A87] text-[#2E5A87] hover:bg-[#2E5A87] hover:text-white">
-//             Login
-//           </Button>
-//           <Button className="bg-[#2E5A87] hover:bg-[#2E5A87]/90">
-//             Start Free Trial
-//           </Button>
-//         </div>
-//       </div>
-//     </div>
-//   </nav>
-// );
 
 const ProductHero = () => (
-  <section className="gradient-hero text-inverse-token py-20">
-    <div className="container mx-auto px-6">
+  <section className="py-20 px-4 gradient-hero text-inverse-token">
+    <div className="container mx-auto">
       <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-6 text-inverse-token">UnAbandon AI Retail Intelligence Platform</h1>
-        <p className="text-xl mb-8 text-inverse-token/85">
-          "UnAbandon AI harnesses customer behavior intelligence across channels and modes into actionable intelligence for critical Retail applications – like Merchandising, Marketing, eCommerce and Supply Chain"
+        <div className="inline-flex items-center px-4 py-2 rounded-full text-inverse-token text-sm font-medium mb-8 bg-white/10">
+          <Zap className="w-4 h-4 mr-2" />
+          AI-Powered Retail Intelligence Platform
+        </div>
+        <h1 className="text-5xl md:text-6xl font-bold text-inverse-token mb-6 leading-tight">
+          UnAbandon AI
+          <span className="gradient-brand bg-clip-text text-transparent">
+            {" "}Retail Intelligence Platform
+          </span>
+        </h1>
+        <p className="text-xl text-inverse-token/80 mb-8 leading-relaxed max-w-3xl mx-auto">
+          Transform your retail operations with our comprehensive AI platform. 
+          Get real-time insights, optimize inventory, and deliver personalized customer experiences.
         </p>
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
-          <Button size="lg" className="" style={{ backgroundColor: 'rgb(var(--brand-accent))', color: 'rgb(var(--text-inverse))' }}>
-            <Play className="w-5 h-5 mr-2" />
-            Watch Demo
-          </Button>
-          <Button size="lg" className="" style={{ backgroundColor: 'rgb(var(--brand-accent))', color: 'rgb(var(--text-inverse))' }}>
-            Start Free Trial
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+          <a href="/retailgenie">
+            <Button 
+              size="lg" 
+              className="px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200" 
+              style={{ background: 'linear-gradient(90deg, rgb(var(--brand-primary)), rgb(var(--brand-secondary)))', color: 'rgb(var(--text-inverse))' }}
+            >
+              Get Early Access
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </a>
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="px-8 py-4 text-lg font-semibold rounded-xl border-2" 
+            style={{ borderColor: 'rgb(var(--text-inverse))', color: 'rgb(var(--text-inverse))' }}
+          >
+            Learn More
           </Button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -366,14 +362,14 @@ const FeatureMatrix = () => {
             </thead>
             <tbody>
               {features.map((category, categoryIdx) => (
-                <>
-                  <tr key={`category-${categoryIdx}`}>
+                <Fragment key={category.category || `category-${categoryIdx}`}>
+                  <tr>
                     <td colSpan={4} className="py-4 px-6 bg-surface-token font-semibold" style={{ color: 'rgb(var(--brand-primary))' }}>
                       {category.category}
                     </td>
                   </tr>
                   {category.items.map((item, itemIdx) => (
-                    <tr key={`${categoryIdx}-${itemIdx}`} className="hover:bg-surface-token">
+                    <tr key={`${category.category}-${itemIdx}`} className="hover:bg-surface-token">
                       <td className="py-3 px-6 border-b">{item}</td>
                       <td className="text-center py-3 px-6 border-b">
                         <CheckCircle className="w-5 h-5 mx-auto" style={{ color: 'rgb(var(--brand-accent))' }} />
@@ -386,7 +382,7 @@ const FeatureMatrix = () => {
                       </td>
                     </tr>
                   ))}
-                </>
+                </Fragment>
               ))}
             </tbody>
           </table>

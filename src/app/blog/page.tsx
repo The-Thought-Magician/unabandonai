@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-
+import Navigation from '@/components/sections/navigation';  
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -173,6 +173,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-surface-token">
+      <Navigation />
       {/* Hero Section */}
       <section className="gradient-hero text-inverse-token py-20">
         <div className="container mx-auto px-6">

@@ -75,10 +75,12 @@ export default function HeroSection() {
                 
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-3 rounded-brand border-2 border-white/30 glass-effect px-8 py-4 text-base font-semibold text-inverse-token transition-all duration-300 hover:bg-white/10 hover:border-white/50 hover:shadow-lg hover-scale"
+                  className="group inline-flex items-center gap-3 rounded-brand px-8 py-4 text-base font-semibold text-inverse-token transition-all duration-300 hover:scale-105 btn-modern hover-lift animate-glow"
+                  style={{ background: 'linear-gradient(90deg, rgb(var(--brand-accent)), rgb(var(--brand-primary)))' }}
                 >
                   <TrendingUp className="w-5 h-5" />
                   Learn More
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>

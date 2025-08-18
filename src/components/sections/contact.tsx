@@ -16,7 +16,7 @@ const ContactSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-inverse-token mb-4">
             Ready to Transform Your{' '}
-            <span className="bg-clip-text text-transparent gradient-brand">
+            <span className="bg-clip-text text-transparent gradient-brand invert">
               Retail Business?
             </span>
           </h2>
@@ -39,7 +39,7 @@ const ContactSection = () => {
 
           <Link
             href="/retailgenie"
-            className="group inline-flex items-center gap-3 btn-outline-primary text-inverse-token font-semibold text-lg px-8 py-4 rounded-brand backdrop-blur-sm transition-all duration-300 hover:scale-105"
+            className="group inline-flex items-center gap-3 btn-primary font-semibold text-lg px-8 py-4 rounded-brand shadow-strong-token transition-all duration-300 hover:scale-105 hover:-translate-y-1"
           >
             <span>Get Early Access</span>
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

@@ -200,23 +200,35 @@ export const FeaturesSection = () => {
         </div>
 
         {/* Statistics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
-          <div className="md:col-span-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {statistics.map((stat, index) => (
-                <div
-                  key={index}
-                  className="relative p-6 rounded-brand bg-elevate-token backdrop-blur-sm border border-white/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 shadow-soft-token"
-                >
-                  <AnimatedCounter
-                    value={stat.value}
-                    label={stat.label}
-                    format={stat.format}
-                  />
-                </div>
-              ))}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 md:mb-20">
+          {statistics.map((stat, index) => {
+            const numericValue = parseFloat(stat.value.replace(/[^0-9.]/g, ''));
+            let formatted = '';
+
+            if (stat.format === 'percentage') {
+              formatted = `${Number.isInteger(numericValue) ? Math.round(numericValue) : numericValue}%`;
+            } else if (stat.format === 'currency') {
+              formatted = `$${(numericValue / 1000).toFixed(1)}M`;
+            } else if (stat.format === 'number') {
+              formatted = numericValue >= 1000 ? `${Math.round(numericValue / 1000)}K+` : `${Math.round(numericValue)}`;
+            }
+
+            return (
+              <div
+          key={index}
+          className="relative p-6 rounded-brand bg-elevate-token border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-extrabold text-base-token tracking-tight tabular-nums subpixel-antialiased leading-none">
+              {formatted}
             </div>
+            <p className="mt-2 text-muted-token font-medium">
+              {stat.label}
+            </p>
           </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Features Grid */}
