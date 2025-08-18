@@ -138,13 +138,15 @@ export default function RetailGenieAccess() {
               Get real-time insights, optimize inventory, and deliver personalized customer experiences.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button 
+              <a href="https://RetailGenie.unabandon.ai" target="_blank" rel="noreferrer">
+                <Button 
                 size="lg" 
                 className="px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200" style={{ background: 'linear-gradient(90deg, rgb(var(--brand-primary)), rgb(var(--brand-secondary)))', color: 'rgb(var(--text-inverse))' }}
               >
                 Get Early Access
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
+              </a>
               <Button 
                 variant="outline" 
                 size="lg"
@@ -158,8 +160,19 @@ export default function RetailGenieAccess() {
       </section>
 
       {/* Features Grid */}
-  <section className="py-20 px-4 bg-surface-token">
+      <section className="py-20 px-4 bg-surface-token">
         <div className="container mx-auto">
+          {/* Visual from assets/retailgenie.md */}
+          <div className="max-w-5xl mx-auto mb-12">
+            <div className="rounded-2xl overflow-hidden shadow-soft-token">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/8c3ac8a1-a3f5-43e1-959c-e179b6cdce99/2.png"
+                alt="RetailGenie Early Access"
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
           <div className="text-center mb-16">
     <h2 className="text-4xl font-bold text-base-token mb-4">
               Comprehensive AI Solutions
@@ -196,6 +209,17 @@ export default function RetailGenieAccess() {
       {/* Benefits Section */}
   <section className="py-20 px-4 bg-surface-token">
         <div className="container mx-auto">
+          {/* Early Access details from assets/retailgenie.md */}
+          <div className="max-w-4xl mx-auto mb-10">
+            <div className="bg-elevate-token rounded-xl p-6 shadow-soft-token">
+              <h3 className="text-2xl font-bold text-base-token mb-3">Early Access Details</h3>
+              <ul className="list-disc pl-5 space-y-2 text-muted-token">
+                <li>In Early Access, our model is trained with <strong>Beauty and Cosmetics</strong> datasets as the tip of the spear.</li>
+                <li>Current transaction focus covers the <strong>top to mid marketing funnel</strong> — Search, Browse to Add to Cart.</li>
+                <li>Prompt suggestions are in the left sidebar to get you started. We welcome feedback and suggestions.</li>
+              </ul>
+            </div>
+          </div>
           <div className="text-center mb-16">
     <h2 className="text-4xl font-bold text-base-token mb-4">
               Why Choose RetailGenie?

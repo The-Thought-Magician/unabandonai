@@ -95,7 +95,7 @@ export default function HeroSection() {
                 
                 <div className="relative glass-effect rounded-3xl p-4 hover-lift">
                   <Image
-                    src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/b5b29fed-a1c9-44df-9c64-cf111ae51b45-unabandon-ai/assets/images/Website+image+chatgpt+created-2.png?"
+                    src="https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/5ddb25d0-c434-4a9c-888d-4d6eb7226e9b/Website+image+chatgpt+created.png"
                     alt="AI-powered retail intelligence platform visualization"
                     width={570}
                     height={450}

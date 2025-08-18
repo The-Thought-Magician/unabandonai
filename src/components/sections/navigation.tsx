@@ -5,19 +5,20 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Products", href: "/products" },
+  { name: "AI Catalog", href: "/products" },
   { name: "Retail Genie", href: "/retailgenie" },
-  { name: "Blog", href: "/blog" },
+  { name: "Thought Leadership", href: "/blog" },
   { name: "About Us", href: "/team" },
-  { name: "Contact", href: "/contact" },
+  { name: "Lets UnAbandon", href: "/contact" },
 ];
 
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2" aria-label="UnAbandon AI Home">
-    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md" style={{ backgroundColor: `rgb(var(--brand-accent))` }}>
-      <span className="text-lg font-bold text-white">Un</span>
-    </div>
-    <span className="text-xl font-semibold text-base-token">Abandon AI</span>
+    <img 
+      src="/LOGO.png" 
+      alt="UnAbandon AI Logo" 
+      className="h-9 w-auto"
+    />
   </Link>
 );
 

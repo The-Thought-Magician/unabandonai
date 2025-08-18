@@ -185,6 +185,15 @@ export default function BlogPage() {
               Stay ahead of the curve with expert insights on AI-powered retail strategies, 
               customer experience optimization, and the future of commerce.
             </p>
+            {/* Visual from assets/blog.md bottom image */}
+            <div className="max-w-3xl mx-auto mb-8">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/7a65421c-1130-41d7-8b10-038224eb42fd/Intelligence+Gap.png"
+                alt="Intelligence Gap"
+                className="w-full h-auto rounded-lg shadow-soft-token opacity-90"
+                loading="lazy"
+              />
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white px-8 py-3" style={{ color: 'rgb(var(--brand-primary))' }}>
                 <BookOpen className="mr-2 h-5 w-5" />
@@ -493,6 +502,19 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
+        {/* References from assets/blog.md */}
+        <section className="container mx-auto px-6 pb-16">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-base-token mb-4">Reference Articles</h2>
+            <ul className="list-disc pl-6 space-y-2 text-muted-token">
+              <li><a className="hover:underline" href="https://coresight.com/research/what-are-the-biggest-challenges-in-retail-merchandising-execution/" target="_blank" rel="noreferrer">Coresight Research: Challenges in Retail Merchandising Execution</a></li>
+              <li><a className="hover:underline" href="https://chaindrugreview.com/merchandising-requires-thinking-outside-the-box/" target="_blank" rel="noreferrer">Chain Drug Review: Merchandising Requires Thinking Outside the Box</a></li>
+              <li><a className="hover:underline" href="https://cloud.google.com/blog/topics/retail/new-research-on-search-abandonment-in-retail" target="_blank" rel="noreferrer">Google Cloud Blog: Search Abandonment in Retail</a></li>
+              <li><a className="hover:underline" href="https://www.bvp.com/atlas/part-i-the-future-of-ai-is-vertical?utm_source=email&utm_medium=organic&utm_campaign=part-i-the-future-of-ai-is-vertical" target="_blank" rel="noreferrer">BVP Atlas: The Future of AI is Vertical</a></li>
+              <li><a className="hover:underline" href="https://issuu.com/rethink-retail/docs/_rethink_retail_2024_grocery_trends_report" target="_blank" rel="noreferrer">Rethink Retail: 2024 Grocery Trends Report</a></li>
+            </ul>
+          </div>
+        </section>
     </div>
   );
 }

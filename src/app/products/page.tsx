@@ -45,6 +45,7 @@ import {
   Activity
 } from 'lucide-react';
 import Navigation from '@/components/sections/navigation';
+import type { ComponentType } from 'react';
 
 // const Navigation = () => (
 //   <nav className="bg-white shadow-sm border-b">
@@ -112,7 +113,17 @@ const ProductHero = () => (
   </section>
 );
 
-const ProductCard = ({ title, description, icon: Icon, features, pricing, screenshot, testimonial }) => (
+type ProductCardProps = {
+  title: string;
+  description: string;
+  icon: ComponentType<any>;
+  features: string[];
+  pricing: string;
+  screenshot?: string;
+  testimonial: { quote: string; author: string; company: string };
+};
+
+const ProductCard = ({ title, description, icon: Icon, features, pricing, screenshot, testimonial }: ProductCardProps) => (
   <Card className="overflow-hidden hover:shadow-lg transition-shadow bg-elevate-token">
     <CardHeader className="gradient-brand text-inverse-token">
       <div className="flex items-center space-x-3">
@@ -125,19 +136,25 @@ const ProductCard = ({ title, description, icon: Icon, features, pricing, screen
     </CardHeader>
     <CardContent className="p-6">
       <div className="space-y-6">
-        {/* Screenshot Placeholder */}
-        <div className="bg-surface-token rounded-lg h-48 flex items-center justify-center">
-          <div className="text-center text-muted-token">
-            <Icon className="w-16 h-16 mx-auto mb-2 opacity-50" />
-            <p>Product Screenshot</p>
+        {/* Screenshot from assets/products.md when available */}
+        {screenshot ? (
+          <div className="rounded-lg overflow-hidden shadow-soft-token">
+            <img src={screenshot} alt={`${title} visual`} className="w-full h-auto" loading="lazy" />
           </div>
-        </div>
+        ) : (
+          <div className="bg-surface-token rounded-lg h-48 flex items-center justify-center">
+            <div className="text-center text-muted-token">
+              <Icon className="w-16 h-16 mx-auto mb-2 opacity-50" />
+              <p>Product Screenshot</p>
+            </div>
+          </div>
+        )}
 
         {/* Features */}
         <div>
           <h4 className="font-semibold mb-3">Key Features</h4>
           <div className="grid grid-cols-1 gap-2">
-            {features.map((feature, idx) => (
+            {features.map((feature: string, idx: number) => (
               <div key={idx} className="flex items-center space-x-2">
                 <CheckCircle className="w-4 h-4" style={{ color: 'rgb(var(--brand-accent))' }} />
                 <span className="text-sm">{feature}</span>
@@ -177,8 +194,6 @@ const ProductCard = ({ title, description, icon: Icon, features, pricing, screen
 );
 
 const ComparisonTable = () => {
-  const [selectedProducts, setSelectedProducts] = useState(['retail-genie', 'analytics']);
-  
   const products = {
     'retail-genie': 'RetailGenie',
     'analytics': 'Analytics Dashboard',
@@ -186,7 +201,9 @@ const ComparisonTable = () => {
     'inventory': 'Inventory Optimization',
     'personalization': 'Personalization Engine',
     'forecasting': 'Predictive Forecasting'
-  };
+  } as const;
+  type ProductKey = keyof typeof products;
+  const [selectedProducts, setSelectedProducts] = useState<ProductKey[]>(['retail-genie', 'analytics']);
 
   const features = [
     'Real-time Analytics',
@@ -214,19 +231,20 @@ const ComparisonTable = () => {
             <div className="mb-6">
               <Label className="text-base font-semibold mb-3 block">Select Products to Compare</Label>
               <div className="flex flex-wrap gap-2">
-                {Object.entries(products).map(([key, name]) => (
+          {Object.entries(products).map(([key, name]) => (
                   <Button
-                    key={key}
-                    variant={selectedProducts.includes(key) ? "default" : "outline"}
+          key={key}
+            variant={selectedProducts.includes(key as ProductKey) ? "default" : "outline"}
                     onClick={() => {
-                      if (selectedProducts.includes(key)) {
-                        setSelectedProducts(selectedProducts.filter(p => p !== key));
+                      const k = key as ProductKey;
+                      if (selectedProducts.includes(k)) {
+                        setSelectedProducts(selectedProducts.filter(p => p !== k));
                       } else if (selectedProducts.length < 3) {
-                        setSelectedProducts([...selectedProducts, key]);
+                        setSelectedProducts([...selectedProducts, k]);
                       }
                     }}
-                    className={selectedProducts.includes(key) ? "" : ""} style={selectedProducts.includes(key) ? { backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' } : undefined}
-                    disabled={!selectedProducts.includes(key) && selectedProducts.length >= 3}
+          className={selectedProducts.includes(key as ProductKey) ? "" : ""} style={selectedProducts.includes(key as ProductKey) ? { backgroundColor: 'rgb(var(--brand-primary))', color: 'rgb(var(--text-inverse))' } : undefined}
+          disabled={!selectedProducts.includes(key as ProductKey) && selectedProducts.length >= 3}
                   >
                     {name}
                   </Button>
@@ -239,7 +257,7 @@ const ComparisonTable = () => {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left py-3 px-4">Feature</th>
-                    {selectedProducts.map(productKey => (
+                    {selectedProducts.map((productKey: ProductKey) => (
                       <th key={productKey} className="text-center py-3 px-4 min-w-32">
                         {products[productKey]}
                       </th>
@@ -725,6 +743,7 @@ export default function ProductsPage() {
       title: 'RetailGenie',
       description: 'Single Source of Intelligence (SSOI) to power Retail AI Apps',
       icon: Brain,
+  screenshot: 'https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/2ca1dcde-23a6-4cf6-8c6d-b211059c29cb/unabandon+pic+1.png',
       features: [
         'Built for Retail associates across Merchandising, eCommerce, Technology, Digital, and Executive Leadership',
         'Trained with Beauty and Cosmetics datasets',
@@ -743,6 +762,7 @@ export default function ProductsPage() {
       title: 'MerchAssist Agent',
       description: 'World\'s first Recommendation Engine for Merchants',
       icon: Users,
+  screenshot: 'https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/cebd2121-00da-4270-b5ef-8005ba9d63c2/unabandon+ai+pic+1.png',
       features: [
         'Help Merchants, Planners, Buyers get more data-driven',
         'Customer-centric decision making',
@@ -835,6 +855,18 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-surface-token">
       <Navigation />
       <ProductHero />
+      {/* MerchAssist Quote from assets/products.md */}
+      <section className="py-10">
+        <div className="container mx-auto px-6">
+          <Card className="bg-elevate-token">
+            <CardContent className="p-6">
+              <blockquote className="text-lg text-base-token italic">
+                “We are building the world’s first Recommendation Engine for Merchants with MerchAssist Agent. MerchAssist will help Merchants, Planners, Buyers get more data-driven, customer-centric, agile and closer to real-time demand”
+              </blockquote>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
       
       {/* Main Product Grid */}
       <section className="py-16">

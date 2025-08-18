@@ -320,7 +320,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form and Office Locations */}
+  {/* Contact Form and Office Locations */}
     <section className="py-20 bg-surface-token">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
@@ -449,6 +449,15 @@ export default function ContactPage() {
 
             {/* Office Locations */}
             <div>
+              {/* Visual from assets/contact.md */}
+              <div className="rounded-2xl overflow-hidden shadow-soft-token mb-8">
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/a50680a9-fa06-45fe-8edd-f4849a4a7dda/happy+shopper.jpeg"
+                  alt="Happy shopper"
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </div>
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-base-token mb-4">
                   Visit Our Offices

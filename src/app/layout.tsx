@@ -5,7 +5,7 @@ import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "UnAbandon AI - Intelligent Retail Solutions",
+  title: "Retail Genie — UnAbandon AI",
   description: "Transform your retail operations with AI-powered intelligence. Single Source of Intelligence (SSOI) to power Retail AI Apps.",
   icons: {
     icon: [
