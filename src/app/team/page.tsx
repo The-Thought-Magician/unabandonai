@@ -8,47 +8,79 @@ import Image from "next/image"
 export default function AboutPage() {
   const teamMembers = [
     {
-      name: "Dr. Sarah Chen",
-      role: "CEO & Founder",
-      expertise: "AI & Retail Strategy Expert",
-      bio: "Former McKinsey partner with 15+ years in retail transformation and AI strategy. PhD in Computer Science from Stanford.",
-      image: "/api/placeholder/300/300",
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "Chief Technology Officer",
-      expertise: "Machine Learning & Architecture",
-      bio: "Ex-Google engineering leader with expertise in large-scale ML systems. Built AI platforms used by millions of users.",
-      image: "/api/placeholder/300/300",
-      linkedin: "#",
-      github: "#"
-    },
-    {
-      name: "Lisa Wang",
-      role: "VP of Product",
-      expertise: "Product Innovation & UX",
-      bio: "Former Amazon PM who led innovative retail products. Expert in user-centric design and product strategy.",
-      image: "/api/placeholder/300/300",
+      name: "Anand Muralidaran",
+      role: "Co-Founder & CEO",
+      expertise: "Retail & AI Strategy",
+      bio: "28 years with F1000 Retailers building Stores, Supply Chain, Digital & AI Solutions. Led Global Retail GTM, BD, Sales and Partnerships at NVIDIA through the crucial years of Enterprise AI",
+      image: "https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/d3ae3866-58c5-41e1-9a58-43d663820bd3/Anand.jpeg",
       linkedin: "#"
     },
     {
-      name: "James Thompson",
-      role: "Head of Sales",
-      expertise: "Enterprise Partnerships",
-      bio: "20+ years in enterprise sales with Fortune 500 retail clients. Deep understanding of retail operations.",
-      image: "/api/placeholder/300/300",
+      name: "Jon Glick",
+      role: "Co-Founder & CTO",
+      expertise: "Search & AI/ML Product",
+      bio: "Product Leader with 25 years in Search, AI/ML, and eCommerce. Led Search at eBay, Yahoo! Search Technologies, and UnitedHealth Care",
+      image: "https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/0602d589-c2e0-4daf-8939-a64a57075a68/Jon.png",
       linkedin: "#"
     },
     {
-      name: "Dr. Raj Patel",
-      role: "Lead Data Scientist",
-      expertise: "AI Research & Development",
-      bio: "PhD in Machine Learning from MIT. Published researcher in retail AI and predictive analytics.",
-      image: "/api/placeholder/300/300",
-      linkedin: "#",
-      github: "#"
+      name: "Sundar Moorthy",
+      role: "Co-Founder & CPO",
+      expertise: "Digital Transformation",
+      bio: "Leading digital transformation initiatives for over 13 years. Developing AI solutions for startups & Enterprise",
+      image: "https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/e925f9eb-900c-41c8-8e3b-e48c85cfaf3d/Sundar.jpg",
+      linkedin: "#"
+    },
+    {
+      name: "Nagendra Jayanty",
+      role: "Co-Founder & VP Supply Chain",
+      expertise: "Supply Chain & Planning",
+      bio: "Supply Chain Planning Leader with expertise in Merchandise Planning and Inventory Optimization. Building AI products in Supply Chain for Startups & Enterprise.",
+      image: "https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/8854408a-5119-4fda-b155-071c4027f29a/Nag+profile+pic.png",
+      linkedin: "#"
+    },
+    {
+      name: "Sunil Rawat",
+      role: "Co-Founder & Advisor",
+      expertise: "Enterprise AI & Risk Management",
+      bio: "Trusted advisor to Fortune 250 CEOs and large, enduring companies navigating complex technology. Founder of Omniscience, supercompute scale AI for risk management in banking and life insurance.",
+      image: "https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/7a3150b3-2e74-4e6e-8131-c3d050985167/headshot+sunil.jpg",
+      linkedin: "#"
+    }
+  ]
+
+  const advisors = [
+    {
+      name: "Jim Miller",
+      role: "Strategic Advisor",
+      expertise: "Former CEO, CTO, Exec and Board Advisor",
+      bio: "Google, early Amazon Executive. Board Member at The RealReal, LivePerson, Service Express",
+      image: "https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/1b654a06-cd1c-4fec-b379-9719e285b084/Jim+Miller.png",
+      linkedin: "#"
+    },
+    {
+      name: "Rajlakshmi (Raj) Shankaran",
+      role: "Strategic Advisor",
+      expertise: "Retail Merchandising Expert",
+      bio: "Former Retail Merchandising Executive at Walmart, SVP Global Retail & Vertical Product Strategy at Circana. Founding Board Member - Bold Futures Academy",
+      image: "https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/f6cb31e5-fe66-4bb9-97cc-cdcd951c0208/Raj+Shankaran+2025.jpeg",
+      linkedin: "#"
+    },
+    {
+      name: "Debesh Khattoi",
+      role: "Strategic Advisor",
+      expertise: "Retail Technology Executive",
+      bio: "30+ year in Retail, Technology and Business. Former Executive at Target, Finish Line, Meijer and Container Store. CIO at National Co+Op Grocers",
+      image: "https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/925d7e65-9282-4298-862a-99d928036f7d/Debesh+Khattoi.jpeg",
+      linkedin: "#"
+    },
+    {
+      name: "Alex Alexander",
+      role: "Strategic Advisor",
+      expertise: "Global Retail Technology",
+      bio: "Former CIO and CTO at Walmart UK, Emirates, Yoox Net-a-Porter. European Digital SMEs Ambassador and a Board Advisor & Associated Partner of the European Artificial Intelligence Skills Alliance",
+      image: "https://images.squarespace-cdn.com/content/v1/6756c5acb680c2769a5b6b8b/2b91f781-f26c-42c3-9352-edac7712626e/Alex_Xoots.jpg",
+      linkedin: "#"
     }
   ]
 
@@ -125,7 +157,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  To make retail intelligent, agile, and customer-centric through AI innovation that transforms how businesses understand and serve their customers.
+                  Translate Customer Behavior into Actionable Intelligence with AI Agents for front and back-office functions powered by Domain Language Models
                 </p>
               </CardContent>
             </Card>
@@ -136,7 +168,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  A world where every retail decision is powered by intelligent insights, creating seamless experiences for customers and sustainable growth for businesses.
+                  Help Retailers thrive again by harnessing customer intelligence across channels/modes and sync Supply with real-time Demand
                 </p>
               </CardContent>
             </Card>
@@ -148,7 +180,7 @@ export default function AboutPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#2E5A87] mb-4">Meet Our Team</h2>
+            <h2 className="text-4xl font-bold text-[#2E5A87] mb-4">Our Team</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our diverse team of experts combines deep retail knowledge with cutting-edge AI expertise
             </p>
@@ -159,9 +191,13 @@ export default function AboutPage() {
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
                   <div className="text-center mb-4">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#2E5A87] to-[#4CAF50] flex items-center justify-center text-white text-2xl font-bold">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </div>
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={96}
+                      height={96}
+                      className="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
+                    />
                     <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
                     <p className="text-[#2E5A87] font-semibold">{member.role}</p>
                     <Badge variant="secondary" className="mt-2">
@@ -187,6 +223,51 @@ export default function AboutPage() {
                         <Twitter className="w-4 h-4" />
                       </Button>
                     )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Advisors Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#2E5A87] mb-4">Strategic Advisors</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Industry leaders and executives guiding our strategic vision
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {advisors.map((advisor, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <Image
+                      src={advisor.image}
+                      alt={advisor.name}
+                      width={80}
+                      height={80}
+                      className="rounded-full object-cover"
+                    />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-900 mb-1">{advisor.name}</h3>
+                      <p className="text-[#2E5A87] font-semibold text-sm">{advisor.role}</p>
+                      <Badge variant="secondary" className="mt-1 text-xs">
+                        {advisor.expertise}
+                      </Badge>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 text-sm mb-4">
+                    {advisor.bio}
+                  </p>
+                  <div className="flex justify-start">
+                    <Button variant="ghost" size="sm" className="p-2">
+                      <Linkedin className="w-4 h-4" />
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

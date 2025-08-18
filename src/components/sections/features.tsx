@@ -137,34 +137,34 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, label, format 
 export const FeaturesSection = () => {
   const features = [
     {
-      icon: <BarChart3 className="w-6 h-6" />,
-      title: "Real-time Analytics",
-      description: "Monitor your retail performance with live data insights"
-    },
-    {
       icon: <Brain className="w-6 h-6" />,
-      title: "AI Predictions",
-      description: "Forecast demand and trends with machine learning"
+      title: "RetailGenie AI Platform",
+      description: "Single Source of Intelligence (SSOI) to power all your Retail AI applications with real-time insights"
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Customer Intelligence",
-      description: "Understand customer behavior and preferences"
+      title: "Customer Behavior Intelligence",
+      description: "Harness customer behavior intelligence across channels and modes into actionable intelligence for critical Retail applications"
     },
     {
       icon: <Package className="w-6 h-6" />,
-      title: "Inventory Optimization",
-      description: "Smart inventory management and automated reordering"
+      title: "MerchAssist Agent",
+      description: "World's first Recommendation Engine for Merchants. Help Merchants, Planners, Buyers get more data-driven and customer-centric"
     },
     {
-      icon: <DollarSign className="w-6 h-6" />,
-      title: "Price Intelligence",
-      description: "Dynamic pricing strategies based on market data"
+      icon: <BarChart3 className="w-6 h-6" />,
+      title: "Multi-Channel Analytics",
+      description: "Comprehensive analytics across Merchandising, Marketing, eCommerce and Supply Chain operations"
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
-      title: "Performance Tracking",
-      description: "Track KPIs and ROI across all channels"
+      title: "Real-Time Demand Sync",
+      description: "Sync Supply with real-time Demand by translating Customer Behavior into Actionable Intelligence with AI Agents"
+    },
+    {
+      icon: <DollarSign className="w-6 h-6" />,
+      title: "Domain Language Models",
+      description: "Powered by specialized Domain Language Models for front and back-office functions in retail operations"
     }
   ];
 

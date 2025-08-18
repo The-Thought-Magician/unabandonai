@@ -75,10 +75,9 @@ const ProductHero = () => (
   <section className="bg-gradient-to-br from-[#2E5A87] to-[#1e3a5f] text-white py-20">
     <div className="container mx-auto px-6">
       <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-6">Complete AI Suite for Modern Retail</h1>
+        <h1 className="text-5xl font-bold mb-6">UnAbandon AI Retail Intelligence Platform</h1>
         <p className="text-xl mb-8 text-blue-100">
-          Transform your retail business with our comprehensive AI-powered solutions. 
-          From customer intelligence to inventory optimization, we've got you covered.
+          "UnAbandon AI harnesses customer behavior intelligence across channels and modes into actionable intelligence for critical Retail applications – like Merchandising, Marketing, eCommerce and Supply Chain"
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           <Button size="lg" className="bg-[#4CAF50] hover:bg-[#4CAF50]/90 text-white">
@@ -727,38 +726,38 @@ export default function ProductsPage() {
   const products = [
     {
       title: 'RetailGenie',
-      description: 'AI-powered cart abandonment recovery',
-      icon: ShoppingCart,
+      description: 'Single Source of Intelligence (SSOI) to power Retail AI Apps',
+      icon: Brain,
       features: [
-        'Smart email sequences',
-        'Personalized offers',
-        'Real-time triggers',
-        'A/B testing',
-        'Multi-channel recovery'
+        'Built for Retail associates across Merchandising, eCommerce, Technology, Digital, and Executive Leadership',
+        'Trained with Beauty and Cosmetics datasets',
+        'Focus on top to mid marketing funnel (Search, Browse to Add to Cart)',
+        'Real-time intelligence on your business',
+        'Early access platform with continuous feedback integration'
       ],
-      pricing: '$199',
+      pricing: 'Early Access',
       testimonial: {
-        quote: 'RetailGenie helped us recover 35% of abandoned carts in the first month.',
-        author: 'Sarah Johnson',
-        company: 'TechStyle Fashion'
+        quote: 'The journey to make Retail intelligent has started…We are thrilled to put you in the driver seat!',
+        author: 'UnAbandon AI Team',
+        company: 'Platform Launch'
       }
     },
     {
-      title: 'Analytics Dashboard',
-      description: 'Comprehensive business intelligence',
-      icon: BarChart3,
+      title: 'MerchAssist Agent',
+      description: 'World\'s first Recommendation Engine for Merchants',
+      icon: Users,
       features: [
-        'Real-time reporting',
-        'Custom dashboards',
-        'Predictive analytics',
-        'Export capabilities',
-        'Team collaboration'
+        'Help Merchants, Planners, Buyers get more data-driven',
+        'Customer-centric decision making',
+        'Agile and closer to real-time demand',
+        'AI-powered merchandising recommendations',
+        'Comprehensive retail intelligence'
       ],
-      pricing: '$299',
+      pricing: 'Coming Soon',
       testimonial: {
-        quote: 'The insights from the analytics dashboard transformed our decision making.',
-        author: 'Mike Chen',
-        company: 'Urban Retail Co.'
+        quote: 'We are building the world\'s first Recommendation Engine for Merchants with MerchAssist Agent.',
+        author: 'Product Development',
+        company: 'UnAbandon AI'
       }
     },
     {
