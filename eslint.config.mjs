@@ -6,6 +6,8 @@ const compat = new FlatCompat({
 })
  
 const eslintConfig = [
+  // Ignore UI components from linting during build as requested
+  { ignores: ['src/components/ui/**'] },
   ...compat.config({
     extends: ['next'],
     plugins: ['import'],
@@ -14,8 +16,7 @@ const eslintConfig = [
     rules: {
       'react/no-unescaped-entities': 'off',
       '@next/next/no-img-element': 'off',
-      '@typescript-eslint/no-unused-vars': 'off',
-      '@typescript-eslint/no-explicit-any': 'off',
+      // Remove refs to missing typescript-eslint plugin rules
       'react-hooks/exhaustive-deps': 'off',
       'import/no-unresolved': 'error',
       'import/named': 'error',
