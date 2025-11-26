@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+/* Removed unsupported at-rule to avoid lints: @custom-variant dark (&:is(.dark *)); */
+
+/* Removed unsupported @theme block (Tailwind v4 CSS-first doesn’t need it). Values are defined directly in :root below. */
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #e5e5e5;
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-body);
+  }
+}
+
+@layer base {
+  :root {
+    /* Shadcn/UI CSS Variables (direct values) */
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+    --card: #ffffff;
+    --card-foreground: #0a0a0a;
+    --popover: #ffffff;
+    --popover-foreground: #0a0a0a;
+    --primary: #171717;
+    --primary-foreground: #fafafa;
+    --secondary: #f5f5f5;
+    --secondary-foreground: #171717;
+    --muted: #f5f5f5;
+    --muted-foreground: #737373;
+    --accent: #f5f5f5;
+    --accent-foreground: #171717;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #0a0a0a;
+    --chart-1: #e67e22;
+    --chart-2: #2d8659;
+    --chart-3: #1e3a5f;
+    --chart-4: #f1c40f;
+    --chart-5: #e74c3c;
+    --radius: 0.5rem;
+    --sidebar-background: #f7f7f7;
+    --sidebar-foreground: #404040;
+    --sidebar-primary: #1a1a1a;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #f0f0f0;
+    --sidebar-accent-foreground: #1a1a1a;
+    --sidebar-border: #d4d4d8;
+    --sidebar-ring: #3b82f6;
+
+    /* Unified Brand Theme Tokens (single source of truth) */
+    --brand-primary: 46 90 135;       /* #2E5A87 */
+    --brand-secondary: 67 56 202;     /* indigo-600 */
+    --brand-accent: 76 175 80;        /* #4CAF50 */
+    --bg: 248 250 252;                /* slate-50 */
+    --bg-elev: 255 255 255;           /* white */
+    --bg-hero: 15 23 42;              /* #0F172A */
+    --text: 15 23 42;                 /* slate-900 */
+    --text-muted: 100 116 139;        /* slate-500 */
+    --text-inverse: 255 255 255;      /* white */
+    --ring-rgb: 99 102 241;           /* indigo-500 (RGB for tokens) */
+    --radius-brand: 12px;             /* brand rounding */
+  }
+
+  /* Dark mode scaffold */
+  .dark {
+    --bg: 2 6 23;            /* #020617 */
+    --bg-elev: 15 23 42;     /* #0F172A */
+    --text: 226 232 240;     /* slate-200 */
+    --text-muted: 148 163 184; /* slate-400 */
+    --text-inverse: 255 255 255;
+  }
+
+  /* Base Typography */
+  html {
+    font-family: var(--font-body);
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+    line-height: 1.2;
+    color: rgb(var(--text));
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem; /* 28px */
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgb(var(--text));
+  }
+
+  p {
+    font-family: var(--font-body);
+    font-size: 1rem; /* 16px */
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(var(--text));
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .btn {
+    font-family: var(--font-body);
+    font-size: 0.875rem; /* 14px */
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 1rem 2rem; /* 16px 32px */
+    border-radius: 0.5rem; /* 8px */
+    background-color: rgb(var(--brand-primary));
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .btn:hover {
+    opacity: 0.9;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.5rem; /* 40px */
+    padding-right: 2.5rem; /* 40px */
+  }
+
+  /* Modern Animation Keyframes */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(30, 64, 175, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(30, 64, 175, 0.6);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes slide-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Utility Classes for Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+  }
+
+  /* Modern Gradient Backgrounds */
+  .gradient-modern-blue {
+    background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
+  }
+
+  .gradient-modern-green {
+    background: linear-gradient(135deg, var(--color-brand-green), var(--color-brand-secondary));
+  }
+
+  .gradient-modern-purple {
+    background: linear-gradient(135deg, var(--color-brand-purple), var(--color-accent-pink));
+  }
+
+  .gradient-modern-full {
+    background: linear-gradient(45deg, var(--color-brand-primary), var(--color-brand-secondary), var(--color-brand-green), var(--color-brand-purple));
+  }
+
+  /* Unified Theme Utilities */
+  .text-base-token { color: rgb(var(--text)); }
+  .text-muted-token { color: rgb(var(--text-muted)); }
+  .text-inverse-token { color: rgb(var(--text-inverse)); }
+  .bg-surface-token { background-color: rgb(var(--bg)); }
+  .bg-elevate-token { background-color: rgb(var(--bg-elev)); }
+  .ring-brand-token { --tw-ring-color: rgb(var(--ring-rgb)); }
+  .rounded-brand { border-radius: var(--radius-brand); }
+  .shadow-soft-token { box-shadow: 0 10px 30px rgba(2,6,23,0.08); }
+  .shadow-strong-token { box-shadow: 0 20px 60px rgba(2,6,23,0.16); }
+
+  .gradient-brand {
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--brand-primary)) 0%,
+      rgb(var(--brand-secondary)) 50%,
+      rgb(var(--brand-accent)) 100%
+    );
+  }
+
+  .gradient-hero {
+    background-image: linear-gradient(
+      135deg,
+      rgb(var(--bg-hero)) 0%,
+      rgba(46, 90, 135, 0.5) 50%,
+      rgba(67, 56, 202, 0.3) 100%
+    );
+  }
+
+  .btn-primary {
+    background-color: rgb(var(--brand-primary));
+    color: rgb(var(--text-inverse));
+    border-radius: var(--radius-brand);
+    box-shadow: 0 8px 24px rgba(2,6,23,0.12);
+  }
+  .btn-primary:hover { opacity: 0.9; }
+
+  .btn-outline-primary {
+    border: 2px solid rgb(var(--brand-primary));
+    color: rgb(var(--brand-primary));
+    border-radius: var(--radius-brand);
+  }
+  .btn-outline-primary:hover { background-color: rgba(46,90,135,0.08); }
+
+  /* Glass Morphism Effect */
+  .glass-effect {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+
+  .glass-effect-dark {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Modern Button Styles */
+  .btn-modern {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .btn-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-modern:hover::before {
+    left: 100%;
+  }
+}
